@@ -14,12 +14,12 @@
 
 ### Ссылки на материалы
 
-**[Макет Figma](https://www.figma.com/file/VEinFefloRRLrI9G50BUFQ/Intas-test?node-id=0%3A1)**
+- **[Макет Figma](https://www.figma.com/file/VEinFefloRRLrI9G50BUFQ/Intas-test?node-id=0%3A1)**
 
-#### Шрифты
-**[Nunito](https://fonts.google.com/specimen/Nunito)**
-**[Rubik](https://fonts.google.com/specimen/Rubik)**
-**[Font-awesome](https://cdnjs.com/libraries/font-awesome)**
+- **Шрифты**
+  - **[Nunito](https://fonts.google.com/specimen/Nunito)**
+  - **[Rubik](https://fonts.google.com/specimen/Rubik)**
+  - **[Font-awesome](https://cdnjs.com/libraries/font-awesome)**
 
 
 * * *
@@ -59,12 +59,6 @@
   - модальное окно
 
 * Автоматизирована сборка сайта с использованием **Gulp**.
-
-***
-### Git
-
-git remote add origin git@github.com:AndRomMan/intas-test.git
-git push -u origin main
 
 * * *
 ### Краткая инструкция по развертыванию проекта
