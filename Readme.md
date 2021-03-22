@@ -14,12 +14,12 @@
 
 ### Ссылки на материалы
 
-**[Макет Figma](https://www.figma.com/file/VEinFefloRRLrI9G50BUFQ/Intas-test?node-id=0%3A1)**
+- **[Макет Figma](https://www.figma.com/file/VEinFefloRRLrI9G50BUFQ/Intas-test?node-id=0%3A1)**
 
-#### Шрифты
-**[Nunito](https://fonts.google.com/specimen/Nunito)**
-**[Rubik](https://fonts.google.com/specimen/Rubik)**
-**[Font-awesome](https://cdnjs.com/libraries/font-awesome)**
+- **Шрифты**
+  - **[Nunito](https://fonts.google.com/specimen/Nunito)**
+  - **[Rubik](https://fonts.google.com/specimen/Rubik)**
+  - **[Font-awesome](https://cdnjs.com/libraries/font-awesome)**
 
 
 * * *
@@ -37,8 +37,8 @@
 9. Нестандартные шрифты подключены **локально**.
 10. **JavaScript**: модальные окна с формой, главное меню сайта. Важно: меню должны быть работоспособным при отключенном JavaScript!
 11. **Требования к JavaScript**:
-– ES6 и выше с транспиляцией в ES5;
-– localStorage/sessionStorage.
+  * ES6 и выше с транспиляцией в ES5;
+  * localStorage/sessionStorage.
 12. Система управления версиями: **Git**
     * Папка build со всем её содержимым должна попадать в репозиторий на github.
 13. Сборка проекта: **Gulp**
@@ -59,12 +59,6 @@
   - модальное окно
 
 * Автоматизирована сборка сайта с использованием **Gulp**.
-
-***
-### Git
-
-git remote add origin git@github.com:AndRomMan/intas-test.git
-git push -u origin main
 
 * * *
 ### Краткая инструкция по развертыванию проекта
