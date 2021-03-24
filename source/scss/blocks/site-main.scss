@@ -1,6 +1,11 @@
 .site-main {
+  display: flex;
+  width: 100%;
   min-width: $mobile-min-width;
   max-width: $desktop-max-width;
+  min-height: $site-main-min-height;
 
   background-color: $test-field-back;
+  // FIXME del outline
+  outline: 1px solid darkblue;
 }

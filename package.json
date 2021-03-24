@@ -29,6 +29,7 @@
     "gulp-sourcemaps": "^2.6.x",
     "gulp-svgmin": "^3.0.x",
     "gulp-svgstore": "^7.0.x",
+    "gulp-terser": "^2.0.1",
     "htmlhint": "^0.14.x",
     "imagemin-pngquant": "^9.0.1",
     "imagemin-webp": "^6.0.x",

@@ -1,0 +1,5 @@
+.test-header {
+  display: none;
+
+  @include section-header;
+}

@@ -10,38 +10,47 @@ $retina-dpi: 144dpi;
 // -------------------------- blocks dimensions
 $mobile-min-width: 320px;
 $desktop-max-width: 1200px;
+$site-main-min-height: 738px;
+$section-header-min-height: 50px;
+$navbar-closed-width: 50px;
+$navbar-opened-width: 200px;
+$button-bullet-diameter: 7px;
 
 // -------------------------- basic colors
 $basic-black: #000000;
 $basic-white: #ffffff;
 $basic-red: #d32f2f;
 $basic-dark: #263238;
+$basic-dark-gray: #34515e;
 
 // -------------------------- fonts
 $font-black: $basic-dark;
 $font-white: $basic-white;
 $font-basic-dark: $basic-dark;
 $font-basic-red: $basic-red;
-$font-menu-title: #34515e;
+$font-navbar-title: $basic-dark-gray;
+$font-prompt-title: $basic-dark-gray;
 $font-test-header: #8d8d8d;
 $font-button-grey: #707070;
 
 // -------------------------- background colors
+$button-bullet-back: $basic-black;
 $body-back: #dfdfdf;
 $test-field-back: #fafafa;
-$menu-back: #eceff1;
+$navbar-back: #eceff1;
 $test-line-back: #efefef;
 $radio-button-red-back: #ff6659;
 $radio-button-grey-back: #afafaf;
 $modal-overlay-back: rgba(#c4c4c4, 0.7);
 $modal-back: $basic-white;
 
-// -------------------------- border colors
-$menu-border: #cfd8dc;
+// -------------------------- borders
+$section-header-border: #cfd8dc;
 $button-grey-border: #707070;
 $button-basic-border: $basic-red;
 $test-complete-border: #e0e0e0;
-// border: 1px dashed #E0E0E0;
+// border: 1px dashed #e0e0e0;
+$button-border-radius: 3px;
 
 // -------------------------- shadow colors
 // $modal-shadow: rgba($basic-dark, 0.25);
@@ -52,3 +61,8 @@ $modal-shadow: rgba($basic-dark, 0.14);
 $link-underline-shift: 3px;
 $button-focus: $basic-red;
 $button-hover-outline: $basic-red;
+$active-state-opacity: 0.7;
+$button-bullet-back-focus: $basic-white;
+// .button:hover,
+// .button:focus,
+// .button:active

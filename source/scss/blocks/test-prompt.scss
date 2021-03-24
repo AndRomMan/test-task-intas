@@ -1,0 +1,11 @@
+.test-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+.test-prompt__title {
+  @include font_nunito(15px, 20px, 400, $font-prompt-title);
+}

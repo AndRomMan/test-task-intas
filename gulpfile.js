@@ -25,7 +25,7 @@ const sourcemap = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 
 // ========== javascript producing module ==========
-// const terser = require('gulp-terser');
+const terser = require('gulp-terser');
 const babel = require('gulp-babel');
 
 // ========= css producing module =========
@@ -140,28 +140,24 @@ function browserSync() {
 
 // ========== javascript producing module ==========
 function getJS() {
-  return (
-    src(path.script.source)
-      .pipe(plumber())
-      .pipe(sourcemap.init())
-      .pipe(
-        babel({
-          presets: ['@babel/preset-env'],
-        })
-      )
-      // .pipe(
-      // terser({
-      // ecma: 2015,
-      // ecma: 5,
-      // ecma: 2015, // specify one of: 5, 2015, 2016, etc.
-      // })
-      // )
-      // .pipe(rename({suffix: '.min'}))
-      .pipe(concat('main.js'))
-      .pipe(sourcemap.write('.'))
-      .pipe(dest(path.script.build))
-      .pipe(browsersync.stream())
-  );
+  return src(path.script.source)
+    .pipe(plumber())
+    .pipe(sourcemap.init())
+    .pipe(
+      babel({
+        presets: ['@babel/preset-env'],
+      })
+    )
+    .pipe(
+      terser({
+        ecma: 5, // specify one of: 5, 2015, 2016, etc.
+      })
+    )
+    .pipe(concat('main.js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemap.write('.'))
+    .pipe(dest(path.script.build))
+    .pipe(browsersync.stream());
 }
 
 // ========= css producing module =========

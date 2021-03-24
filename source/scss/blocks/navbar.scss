@@ -1,0 +1,17 @@
+.navbar {
+  max-width: $navbar-opened-width;
+
+  background-color: $navbar-back;
+}
+
+.navbar--closed {
+  width: $navbar-closed-width;
+
+  & .navbar-header__title {
+    display: none;
+  }
+
+  & .navbar__list {
+    display: none;
+  }
+}

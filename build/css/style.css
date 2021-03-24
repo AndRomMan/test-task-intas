@@ -1,3 +1,26 @@
+html {
+  box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+a {
+  text-decoration: none; }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -23,29 +46,6 @@
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(100%);
           clip-path: inset(100%); }
-
-html {
-  box-sizing: border-box;
-  height: 100%; }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
-
-body {
-  min-width: 320px;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: auto; }
-
-img {
-  max-width: 100%;
-  height: auto; }
-
-a {
-  text-decoration: none; }
 
 /* nunito-regular - latin_cyrillic */
 @font-face {
@@ -90,9 +90,150 @@ a {
   color: #d32f2f; }
 
 .site-main {
+  display: flex;
+  width: 100%;
   min-width: 320px;
   max-width: 1200px;
-  background-color: #fafafa; }
+  min-height: 738px;
+  background-color: #fafafa;
+  outline: 1px solid darkblue; }
+
+.navbar {
+  max-width: 200px;
+  background-color: #eceff1; }
+
+.navbar--closed {
+  width: 50px; }
+  .navbar--closed .navbar-header__title {
+    display: none; }
+  .navbar--closed .navbar__list {
+    display: none; }
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  min-height: 50px;
+  border-bottom: 1px solid #cfd8dc; }
+
+.navbar-header__title {
+  order: 1;
+  margin: 0;
+  margin-left: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #34515e; }
+
+.navbar-btn {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none; }
+
+.navbar-btn__arrow {
+  width: 14px;
+  height: 14px; }
+
+.navbar-btn__arrow--closed {
+  display: none; }
+
+.navbar-btn__burger {
+  width: 14px;
+  height: 12px; }
+
+.navbar-btn__burger--closed {
+  display: none; }
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 18px 8px;
+  list-style: none; }
+
+.navbar-list__item {
+  width: 100%; }
+
+.navbar-list__btn {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 0 26px;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  outline: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
+  .navbar-list__btn::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 7px;
+    height: 7px;
+    background-color: #000000;
+    border-radius: 50%; }
+
+.navbar-list__btn:hover {
+  border-color: #d32f2f; }
+
+.navbar-list__btn:focus {
+  color: #ffffff;
+  background-color: #d32f2f; }
+  .navbar-list__btn:focus::before {
+    background-color: #ffffff; }
+
+.navbar-list__btn:active {
+  opacity: 0.7; }
+
+.test-header {
+  display: none;
+  min-height: 50px;
+  border-bottom: 1px solid #cfd8dc; }
+
+.test-section {
+  display: flex;
+  width: 100%;
+  outline: 1px solid red; }
+
+.test-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%; }
+
+.test-prompt__title {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #34515e; }
+
+.test-description {
+  display: none; }
+
+.test-field {
+  display: none; }
+
+.test-summary {
+  display: none; }
+
+.site-footer {
+  margin-top: auto; }
 
 .site-footer__copyright {
   margin-top: 45px;
@@ -102,6 +243,15 @@ a {
   line-height: 16px;
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #263238; }
+
+.site-footer__copyright a {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
+  .site-footer__copyright a:hover {
+    text-decoration: underline; }
 
 .modal {
   position: absolute;

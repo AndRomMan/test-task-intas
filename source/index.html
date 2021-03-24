@@ -28,37 +28,41 @@
     <main class="site-main">
       <h1 class="visually-hidden">Сборник тестов по теме "автоматизация технологических процессов"</h1>
 
-      <nav class="navigation">
-        <h2 class="navigation__title">тесты</h2>
+      <nav class="navbar">
+        <header class="navbar__header navbar-header">
+          <h2 class="navbar-header__title">тесты</h2>
 
-        <button class="navigation__btn" type="button">
-          <svg width="14" height="14" role="img">
-            <use xlink:href="#arrow"></use>
-          </svg>
-          <svg width="14" height="12" role="img">
-            <use xlink:href="#burger"></use>
-          </svg>
-        </button>
+          <button class="navbar-header__btn navbar-btn" type="button">
+            <svg class="navbar-btn__arrow" width="14" height="14" role="img">
+              <use xlink:href="#arrow"></use>
+            </svg>
+            <svg class="navbar-btn__burger navbar-btn__burger--closed" width="14" height="12" role="img">
+              <use xlink:href="#burger"></use>
+            </svg>
+          </button>
+        </header>
 
-        <ul class="navigation__list">
-          <li class="test-list__item">
-            <button class="navigation__btn" id="test-btn-1">
+        <ul class="navbar__list navbar-list">
+          <li class="navbar-list__item">
+            <button class="navbar-list__btn" id="question-1" type="button">
               Тест 1
             </button>
           </li>
-          <li class="test-list__item">
-            <button class="navigation__btn" id="test-btn-2">
+          <li class="navbar-list__item">
+            <button class="navbar-list__btn" id="question-2" type="button">
               Тест 2
             </button>
           </li>
-          <li class="test-list__item">
-            <button class="navigation__btn" id="test-btn-3">
+          <li class="navbar-list__item">
+            <button class="navbar-list__btn" id="question-3" type="button">
               Тест 3
             </button>
           </li>
-          <li class="test-list__item">
-            <button class="navigation__btn" id="test-btn-4">
-              Проектирование опасных производственных объектов нефтегазоперерабатывающих производств
+          <li class="navbar-list__item">
+            <button class="navbar-list__btn" id="question-4" type="button">
+              <!-- Тест 4 -->
+              <!-- Проектирование опасных производственных объектов нефтегазоперерабатывающих производств -->
+              Проектирование опасных производственных объектов нефтегазо - <br>перерабатывающих производств
             </button>
           </li>
         </ul>
@@ -90,9 +94,9 @@
           </div>
         </header>
 
-
-        <p class="test-section__prompt">Выберите тест из списка</p>
-
+        <section class="test-prompt">
+          <h2 class="test-prompt__title">Выберите тест из списка</h2>
+        </section>
 
         <section class="test-description">
           <h3 class="visually-hidden">Описание теста</h3>
@@ -107,10 +111,10 @@
           </div>
         </section>
 
-        <section class="test-container">
+        <section class="test-field">
           <h3 class="visually-hidden">Поле теста</h3>
 
-          <div class="test-field">
+          <div class="test-field__form-wrapper">
             <form class="test-form" action="#" method="GET">
               <fieldset>
                 <p class="question">
@@ -306,11 +310,11 @@
           </div>
         </section>
 
-        <section class="test-finish">
+        <section class="test-summary">
           <h3 class="visually-hidden">Результаты выполнения теста</h3>
-          <p class="test-finish__title">Тест завершён</p>
-          <p class="test-finish__subtitle">
-            Вы ответили на <span class="test-finish__counter">0</span> из <span class="test-finish__total">5</span>вопросов.
+          <p class="test-summary__title">Тест завершён</p>
+          <p class="test-summary__subtitle">
+            Вы ответили на <span class="test-summary__counter">0</span> из <span class="test-summary__total">5</span>вопросов.
           </p>
 
           <p>Ваши ответы</p>
@@ -395,7 +399,7 @@
           </ul>
 
           <div class="button-block">
-            <button class="test-finish__retest" type="button"> Пройти еще раз</button>
+            <button class="test-summary__retest" type="button"> Пройти еще раз</button>
           </div>
         </section>
       </section>
@@ -403,7 +407,8 @@
 
     <footer class="site-footer">
       <p class="site-footer__copyright">
-        2020 &#169; INTAS-Company.com
+        2020 &#169;
+        <a href="http://intas-company.com/">INTAS-Company.com</a>
       </p>
     </footer>
 
@@ -416,7 +421,8 @@
         <button class="modal__escape-btn" type="button">Отмена</button>
       </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 
   </body>
 

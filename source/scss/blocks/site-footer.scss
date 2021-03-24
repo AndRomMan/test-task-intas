@@ -1,5 +1,5 @@
 .site-footer {
-  //
+  margin-top: auto;
 }
 
 .site-footer__copyright {
@@ -7,4 +7,12 @@
   margin-bottom: 45px;
 
   @include font_nunito(12px, 16px, 400, $font-basic-dark);
+}
+
+.site-footer__copyright a {
+  @include font_nunito(12px, 16px, 400, $font-basic-dark);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
