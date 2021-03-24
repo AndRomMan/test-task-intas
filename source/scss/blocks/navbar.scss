@@ -1,5 +1,6 @@
 .navbar {
-  max-width: $navbar-opened-width;
+  flex-shrink: 0;
+  min-width: $navbar-opened-width;
 
   background-color: $navbar-back;
 }

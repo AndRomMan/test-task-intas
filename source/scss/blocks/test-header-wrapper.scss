@@ -1,0 +1,26 @@
+.test-header-wrapper {
+  display: flex;
+  // align-items: center;
+  // display: none;
+
+  @include section-header;
+}
+
+// .description-test-header {
+//   // display: none;
+//   display: flex;
+//   align-items: center;
+//   margin: 0;
+//   padding-left: 16px;
+
+//   @include font_nunito(15px, 20px, 700, $font-header-title);
+// }
+
+.current-test-header {
+  display: none;
+  // display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 10px;
+}

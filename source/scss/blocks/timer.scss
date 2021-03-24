@@ -1,0 +1,37 @@
+.timer {
+  position: relative;
+
+  padding-right: 6px;
+  padding-left: 8px;
+}
+
+
+.timer__hours {
+  //
+}
+
+.timer__minutes {
+  //
+}
+
+.timer__seconds {
+  //
+}
+
+.timer__separator {
+  letter-spacing: 0;
+}
+
+.timer::before {
+  content: ":";
+  position: absolute;
+  top: 0;
+  left: 22px;
+}
+
+.timer::after {
+  content: ":";
+  position: absolute;
+  top: 0;
+  right: 20px;
+}

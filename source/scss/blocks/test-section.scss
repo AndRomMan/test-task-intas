@@ -1,7 +1,5 @@
 .test-section {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  // FIXME del outline
-
-  outline: 1px solid red;
 }

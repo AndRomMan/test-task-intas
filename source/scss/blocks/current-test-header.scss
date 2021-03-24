@@ -1,0 +1,40 @@
+
+.current-test-header {
+  // display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.current-test-header__out-btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+  outline: none;
+  cursor: pointer;
+
+  @include font_nunito(12px, 16px, 400, $font-test-header);
+}
+
+.current-test-header__out-btn:hover {
+  border-color: $button-hover-outline;
+}
+
+.current-test-header__out-btn:active {
+  opacity: $active-state-opacity;
+}
+
+.current-test-header__out-btn:focus {
+  color: white;
+
+  background-color: $button-focus;
+}
+
+.current-test-header_test-name {
+  max-width: 45%;
+  margin: 0;
+
+  @include font_nunito(16px, 22px, 700, $font-basic-dark);
+}

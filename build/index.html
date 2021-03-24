@@ -60,9 +60,7 @@
           </li>
           <li class="navbar-list__item">
             <button class="navbar-list__btn" id="question-4" type="button">
-              <!-- Тест 4 -->
-              <!-- Проектирование опасных производственных объектов нефтегазоперерабатывающих производств -->
-              Проектирование опасных производственных объектов нефтегазо - <br>перерабатывающих производств
+              Тест 4
             </button>
           </li>
         </ul>
@@ -71,26 +69,31 @@
       <section class="test-section">
         <h2 class="visually-hidden">Поле для вывода тестов и результатов</h2>
 
-        <header class="test-header">
-          <p class="test-header__desctiption">Описание</p>
+        <header class="test-header-wrapper">
+          <p class="description-test-header">Описание</p>
 
-          <button class="out-btn" type="button">Выход</button>
-          <p>Название теста</p>
+          <div class="current-test-header">
+            <button class="current-test-header__out-btn" type="button">Выход</button>
 
-          <div class="test-header__counter-wrapper">
-            <span>&#124;</span>
-            <p class="counter">
-              <span class="counter__current">2</span>
-              <span>&#47;</span>
-              <span class="counter__total">5</span>
-            </p>
-            <span>&#124;</span>
+            <p class="current-test-header_test-name">Тест 1</p>
 
-            <div class="time-counter">
-              <span class="time-counter__hours">00</span>
-              <span class="time-counter__minutes">00</span>
-              <span class="time-counter__seconds">00</span>
+            <div class="counter-wrapper">
+
+              <div class="test-counter">
+                <span class="test-counter__current">2</span>
+                <span>&#47;</span>
+                <span class="test-counter__total">5</span>
+              </div>
+
+              <div class="timer">
+                <span class="timer__hours">00</span>
+                <!-- <span class="timer__separator"></span> -->
+                <span class="timer__minutes">05</span>
+                <!-- <span class="timer__separator"></span> -->
+                <span class="timer__seconds">12</span>
+              </div>
             </div>
+
           </div>
         </header>
 
