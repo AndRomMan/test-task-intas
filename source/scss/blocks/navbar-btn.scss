@@ -7,7 +7,18 @@
   height: 30px;
   padding: 0;
 
-  border: none;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+  outline: none;
+  cursor: pointer;
+}
+
+.navbar-btn:hover {
+  border-color: $button-hover-outline;
+}
+
+.navbar-btn:active {
+  opacity: $active-state-opacity;
 }
 
 

@@ -24,14 +24,15 @@
   border: 1px solid transparent;
   border-radius: $button-border-radius;
   outline: none;
+  cursor: pointer;
 
   @include font_nunito(14px, 19px, 400, $font-basic-dark);
 
   &::before {
     content: "";
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 6px;
+    left: 6px;
 
     width: $button-bullet-diameter;
     height: $button-bullet-diameter;
@@ -42,7 +43,7 @@
 }
 
 .navbar-list__btn:hover {
-  border-color: $button-basic-border;
+  border-color: $button-hover-outline;
 }
 
 .navbar-list__btn:focus {
