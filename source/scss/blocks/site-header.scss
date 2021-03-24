@@ -1,0 +1,13 @@
+.site-header {
+  //
+}
+
+.site-header__title {
+  margin-top: 29px;
+  margin-bottom: 29px;
+
+  text-transform: uppercase;
+  letter-spacing: 10.4px;
+
+  @include font_rubik(32px, 48px, 400, $font-basic-red);
+}

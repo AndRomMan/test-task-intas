@@ -1,0 +1,54 @@
+// background for retina display
+$retina-dppx: 1.5dppx;
+// $retina-dppx: 1.1dppx;
+$retina-dpi: 144dpi;
+// $retina-dpi: 100dpi;
+
+// (min-resolution: $retina-dpi),
+// (min-resolution: $retina-dppx)
+
+// -------------------------- blocks dimensions
+$mobile-min-width: 320px;
+$desktop-max-width: 1200px;
+
+// -------------------------- basic colors
+$basic-black: #000000;
+$basic-white: #ffffff;
+$basic-red: #d32f2f;
+$basic-dark: #263238;
+
+// -------------------------- fonts
+$font-black: $basic-dark;
+$font-white: $basic-white;
+$font-basic-dark: $basic-dark;
+$font-basic-red: $basic-red;
+$font-menu-title: #34515e;
+$font-test-header: #8d8d8d;
+$font-button-grey: #707070;
+
+// -------------------------- background colors
+$body-back: #dfdfdf;
+$test-field-back: #fafafa;
+$menu-back: #eceff1;
+$test-line-back: #efefef;
+$radio-button-red-back: #ff6659;
+$radio-button-grey-back: #afafaf;
+$modal-overlay-back: rgba(#c4c4c4, 0.7);
+$modal-back: $basic-white;
+
+// -------------------------- border colors
+$menu-border: #cfd8dc;
+$button-grey-border: #707070;
+$button-basic-border: $basic-red;
+$test-complete-border: #e0e0e0;
+// border: 1px dashed #E0E0E0;
+
+// -------------------------- shadow colors
+// $modal-shadow: rgba($basic-dark, 0.25);
+$modal-shadow: rgba($basic-dark, 0.14);
+// box-shadow: 0 0 14px rgba($basic-dark, 0.14);
+
+// -------------------------- effects
+$link-underline-shift: 3px;
+$button-focus: $basic-red;
+$button-hover-outline: $basic-red;

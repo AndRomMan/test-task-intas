@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="preload" href="fonts/nunito-v16-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-v16-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/rubik-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.min.css">
+    <meta name="description" content="Intas Company - тестовое задание">
+    <title>Тесты по автоматизации</title>
+  </head>
+
+  <body class="body-flex">
+    <div style="display: none;">
+      @@include('./img/compressed/sprite.svg')
+    </div>
+
+    <header class="site-header">
+      <p class="site-header__title" lang="en">tests</p>
+    </header>
+
+    <main class="site-main">
+      <h1 class="visually-hidden">Сборник тестов по теме "автоматизация технологических процессов"</h1>
+
+      <nav class="navigation">
+        <h2 class="navigation__title">тесты</h2>
+
+        <button class="navigation__btn" type="button">
+          <svg width="14" height="14" role="img">
+            <use xlink:href="#arrow"></use>
+          </svg>
+          <svg width="14" height="12" role="img">
+            <use xlink:href="#burger"></use>
+          </svg>
+        </button>
+
+        <ul class="navigation__list">
+          <li class="test-list__item">
+            <button class="navigation__btn" id="test-btn-1">
+              Тест 1
+            </button>
+          </li>
+          <li class="test-list__item">
+            <button class="navigation__btn" id="test-btn-2">
+              Тест 2
+            </button>
+          </li>
+          <li class="test-list__item">
+            <button class="navigation__btn" id="test-btn-3">
+              Тест 3
+            </button>
+          </li>
+          <li class="test-list__item">
+            <button class="navigation__btn" id="test-btn-4">
+              Проектирование опасных производственных объектов нефтегазоперерабатывающих производств
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="test-section">
+        <h2 class="visually-hidden">Поле для вывода тестов и результатов</h2>
+
+        <header class="test-header">
+          <p class="test-header__desctiption">Описание</p>
+
+          <button class="out-btn" type="button">Выход</button>
+          <p>Название теста</p>
+
+          <div class="test-header__counter-wrapper">
+            <span>&#124;</span>
+            <p class="counter">
+              <span class="counter__current">2</span>
+              <span>&#47;</span>
+              <span class="counter__total">5</span>
+            </p>
+            <span>&#124;</span>
+
+            <div class="time-counter">
+              <span class="time-counter__hours">00</span>
+              <span class="time-counter__minutes">00</span>
+              <span class="time-counter__seconds">00</span>
+            </div>
+          </div>
+        </header>
+
+
+        <p class="test-section__prompt">Выберите тест из списка</p>
+
+
+        <section class="test-description">
+          <h3 class="visually-hidden">Описание теста</h3>
+
+          <div class="test-description__wrapper">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam laborum quae molestiae beatae illum velit vel id eaque odit molestias? Omnis repudiandae sunt delectus eum sapiente tenetur minima autem adipisci.
+            </p>
+            <button class="start-btn" type="button">Начать</button>
+            <button class="escape-btn" type="button">Отмена</button>
+          </div>
+        </section>
+
+        <section class="test-container">
+          <h3 class="visually-hidden">Поле теста</h3>
+
+          <div class="test-field">
+            <form class="test-form" action="#" method="GET">
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">1.</span>
+                  <span>Вопрос</span>
+                </p>
+
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-1-a" type="radio" name="question-1" value="1a">
+                    <label for="question-1-a">Вариант А</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-1-b" type="radio" name="question-1" value="1b">
+                    <label for="question-1-b">Вариант Б</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-1-c" type="radio" name="question-1" value="1c">
+                    <label for="question-1-c">Вариант В</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-1-d" type="radio" name="question-1" value="1d">
+                    <label for="question-1-d">Вариант Г</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-1-e" type="radio" name="question-1" value="1e">
+                    <label for="question-1-e">Вариант Д</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-1-f" type="radio" name="question-1" value="1f">
+                    <label for="question-1-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">2.</span>
+                  <span>Вопрос</span>
+                </p>
+
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-2-a" type="radio" name="question-2" value="2a">
+                    <label for="question-2-a">Вариант А</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-2-b" type="radio" name="question-2" value="2b">
+                    <label for="question-2-b">Вариант Б</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-2-c" type="radio" name="question-2" value="2c">
+                    <label for="question-2-c">Вариант В</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-2-d" type="radio" name="question-2" value="2d">
+                    <label for="question-2-d">Вариант Г</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-2-e" type="radio" name="question-2" value="2e">
+                    <label for="question-2-e">Вариант Д</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-2-f" type="radio" name="question-2" value="2f">
+                    <label for="question-2-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">3.</span>
+                  <span>Вопрос</span>
+                </p>
+
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-3-a" type="radio" name="question-3" value="3a">
+                    <label for="question-3-a">Вариант А</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-3-b" type="radio" name="question-3" value="3b">
+                    <label for="question-3-b">Вариант Б</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-3-c" type="radio" name="question-3" value="3c">
+                    <label for="question-3-c">Вариант В</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-3-d" type="radio" name="question-3" value="3d">
+                    <label for="question-3-d">Вариант Г</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-3-e" type="radio" name="question-3" value="3e">
+                    <label for="question-3-e">Вариант Д</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-3-f" type="radio" name="question-3" value="3f">
+                    <label for="question-3-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">4.</span>
+                  <span>Вопрос</span>
+                </p>
+
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-4-a" type="radio" name="question-4" value="4a">
+                    <label for="question-4-a">Вариант А</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-4-b" type="radio" name="question-4" value="4b">
+                    <label for="question-4-b">Вариант Б</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-4-c" type="radio" name="question-4" value="4c">
+                    <label for="question-4-c">Вариант В</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-4-d" type="radio" name="question-4" value="4d">
+                    <label for="question-4-d">Вариант Г</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-4-e" type="radio" name="question-4" value="4e">
+                    <label for="question-4-e">Вариант Д</label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-4-f" type="radio" name="question-4" value="4f">
+                    <label for="question-4-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">5.</span>
+                  <span>Вопрос</span>
+                </p>
+
+                <ul class="answer-list answer-list--full">
+                  <li class="answer-list__item">
+                    <input id="question-5-a" type="radio" name="question-5" value="5a">
+                    <label for="question-5-a">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-5-b" type="radio" name="question-5" value="5b">
+                    <label for="question-5-b">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.
+                    </label>
+                  </li>
+
+                  <li class="answer-list__item">
+                    <input id="question-5-c" type="radio" name="question-5" value="5c">
+                    <label for="question-5-c">
+                      Lorem ipsum dolor sit amet, aliquam sollicitudin odio sit amet.
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <div class="button-block">
+                <button class="test-form__submit" type="submit">Завершить</button>
+              </div>
+              <button class="test-form__reset" type="reset">Сбросить все ответы</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="test-finish">
+          <h3 class="visually-hidden">Результаты выполнения теста</h3>
+          <p class="test-finish__title">Тест завершён</p>
+          <p class="test-finish__subtitle">
+            Вы ответили на <span class="test-finish__counter">0</span> из <span class="test-finish__total">5</span>вопросов.
+          </p>
+
+          <p>Ваши ответы</p>
+
+          <ul class="answers-list">
+            <li class="answers-list__item answers-item">
+              <span class="answers-item__number">1.</span>
+              <span class="answers-item__question">Вопрос</span>
+              <div class="answers-item__result">
+                <p>
+                  <span>Правильный ответ: </span>
+                  <span>Вариант Б.</span>
+                </p>
+                <p>
+                  Вы ответили:
+                  <span>Вы ответили: </span>
+                  <span>Не ответили.</span>
+                </p>
+              </div>
+            </li>
+            <li class="answers-list__item answers-item">
+              <span class="answers-item__number">2.</span>
+              <span class="answers-item__question">Вопрос</span>
+              <div class="answers-item__result">
+                <p>
+                  <span>Правильный ответ: </span>
+                  <span>Вариант В.</span>
+                </p>
+                <p>
+                  Вы ответили:
+                  <span>Вы ответили: </span>
+                  <span>Не ответили.</span>
+                </p>
+              </div>
+            </li>
+            <li class="answers-list__item answers-item">
+              <span class="answers-item__number">3.</span>
+              <span class="answers-item__question">Вопрос</span>
+              <div class="answers-item__result">
+                <p>
+                  <span>Правильный ответ: </span>
+                  <span>Вариант Г.</span>
+                </p>
+                <p>
+                  Вы ответили:
+                  <span>Вы ответили: </span>
+                  <span>Не ответили.</span>
+                </p>
+              </div>
+            </li>
+            <li class="answers-list__item answers-item">
+              <span class="answers-item__number">4.</span>
+              <span class="answers-item__question">Вопрос</span>
+              <div class="answers-item__result">
+                <p>
+                  <span>Правильный ответ: </span>
+                  <span>Вариант Д.</span>
+                </p>
+                <p>
+                  Вы ответили:
+                  <span>Вы ответили: </span>
+                  <span>Не ответили.</span>
+                </p>
+              </div>
+            </li>
+            <li class="answers-list__item answers-item">
+              <span class="answers-item__number">5.</span>
+              <span class="answers-item__question">Вопрос</span>
+              <div class="answers-item__result">
+                <p>
+                  <span>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet..
+                  </span>
+                </p>
+                <p>
+                  Вы ответили:
+                  <span>Вы ответили: </span>
+                  <span>Не ответили.</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="button-block">
+            <button class="test-finish__retest" type="button"> Пройти еще раз</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__copyright">
+        2020 &#169; INTAS-Company.com
+      </p>
+    </footer>
+
+    <div class="modal">
+      <div class="modal__card">
+        <p class="modal__question">Вы уверены, что хотите выйти?</p>
+        <p class="modal__warning">Все результаты будут сброшены</p>
+
+        <button class="modal__exit-btn" type="button">Выход</button>
+        <button class="modal__escape-btn" type="button">Отмена</button>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+
+  </body>
+
+</html>
+
+<!-- Общие вопросы по основам автоматизации производства: определения; автоматические системы контроля, управления и регулирования; датчики; исполнительные механизмы; устройства преобразования сигналов; роботы. -->

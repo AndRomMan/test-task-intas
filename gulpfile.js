@@ -7,8 +7,6 @@
 // npx eslint --fix source/js/*.js
 // npx stylelint source/**/*.scss
 // npx stylelint build/**/*.css
-// npx babel source/js/*.js -o script-compiled.js
-// npx babel source/js/*.js src -d build/js
 
 'use strict';
 // подключаем Gulp
@@ -46,13 +44,24 @@ const fileinclude = require('gulp-file-include');
 // const htmlmin = require('gulp-html-minifier-terser');
 
 // ========= img producing module =========
+// gulp-imagemin включает плагины:
+// mozjpeg
+// svgo
+// optipng - сжимает PNG без потерь
+// pngquant - сжимает PNG с потерями
+
+const imagemin = require('gulp-imagemin');
+const imageminPngQuant = require('imagemin-pngquant');
+
+// imagemin-webp не устанавливает расширение "webp" - следует переименовать файл
+const imageminWebp = require('imagemin-webp');
 let svgmin = require('gulp-svgmin');
 
 // плагин для сборки svg-sprite
 const svgstore = require('gulp-svgstore');
 
 // ========= file path =========
-const source = 'src/';
+const source = 'source/';
 const build = 'build/';
 
 const path = {
@@ -62,8 +71,8 @@ const path = {
     build,
   },
   style: {
-    source: source + 'sass/style.scss',
-    watch: source + 'sass/**/*.scss',
+    source: source + 'scss/style.scss',
+    watch: source + 'scss/**/*.scss',
     build: build + 'css/',
   },
   script: {
@@ -72,10 +81,18 @@ const path = {
     dest: source + 'js/',
     build: build + 'js/',
   },
+  img: {
+    sourceFolder: source + 'img/',
+    // source: source + 'img/*.{jpg,png,svg}',
+    sourceWebp: source + 'img/*.{jpg,png}',
+    watch: source + 'img/**/*.{jpg,jpeg,png,svg}',
+    compressedFolder: source + 'img/compressed/',
+    build: build + 'img/',
+  },
   spriteSVG: {
-    source: source + 'img/sprite-svg/*.svg',
-    watch: source + 'img/sprite-svg/*.svg',
-    compressedFolder: source + 'img/sprite-svg/compressed/',
+    source: source + 'img/sprite_svg/*.svg',
+    watch: source + 'img/sprite_svg/*.svg',
+    compressedFolder: source + 'img/sprite_svg/compressed/',
     build: build + 'img/',
   },
   iconSVG: {
@@ -84,7 +101,7 @@ const path = {
     build: build + 'img/',
   },
   favicon: {
-    source: source + 'favicon/initial-img/*.png',
+    source: source + 'favicon/initial_img/*.png',
     manifest: source + 'favicon/*.*',
     compressedFolder: source + 'favicon/compressed/',
     build,
@@ -115,8 +132,8 @@ function browserSync() {
     open: true,
     cors: true,
     ui: false,
-    // browser: ['firefox'],
     browser: ['chrome'],
+    // browser: ["firefox"]
     // browser: ["chrome", "firefox"]
   });
 }
@@ -209,8 +226,8 @@ function compressSvgForSprite() {
         plugins: [
           {removeDimensions: true},
           {removeViewBox: false},
-          {cleanupNumericValues: {floatPrecision: 2}},
-          {cleanupListOfValues: {floatPrecision: 2}},
+          {cleanupNumericValues: {floatPrecision: 1}},
+          {cleanupListOfValues: {floatPrecision: 1}},
           {removeXMLNS: true},
           {removeStyleElement: true},
           {removeScriptElement: true},
@@ -231,6 +248,35 @@ function createSvgSprite() {
     .pipe(dest(path.img.compressedFolder));
 }
 
+// ========= JPEG rename to JPG module =========
+function jpegToJpg() {
+  return src(path.img.sourceFolder + '*.jpeg')
+    .pipe(plumber())
+    .pipe(rename({extname: '.jpg'}))
+    .pipe(gulp.dest(path.img.sourceFolder));
+}
+
+function eraseJpeg() {
+  return del(path.img.sourceFolder + '*.jpeg');
+}
+
+let renameJpegToJpg = series(jpegToJpg, eraseJpeg);
+
+// ========= img compressing module =========
+/* method - trade off between encoding speed and the file size and quality.
+Default: 4 - 0 (fastest) .. 6 (slowest)
+quality - Default: 75
+*/
+function convertImgToWebp() {
+  return (
+    src(path.img.sourceWebp)
+      .pipe(plumber())
+      .pipe(imagemin([imageminWebp({quality: 70})]))
+      // .pipe(imagemin([imageminWebp({quality: 75, method: 4})]))
+      .pipe(rename({extname: '.webp'}))
+      .pipe(dest(path.img.compressedFolder))
+  );
+}
 
 function compressSvg() {
   return gulp
@@ -240,8 +286,8 @@ function compressSvg() {
         plugins: [
           {removeDimensions: true},
           {removeViewBox: false},
-          {cleanupNumericValues: {floatPrecision: 2}},
-          {cleanupListOfValues: {floatPrecision: 2}},
+          {cleanupNumericValues: {floatPrecision: 1}},
+          {cleanupListOfValues: {floatPrecision: 1}},
           // {removeXMLNS: true},
           {removeStyleElement: true},
           {removeScriptElement: true},
@@ -252,6 +298,41 @@ function compressSvg() {
     )
     .pipe(gulp.dest(path.iconSVG.compressedFolder));
 }
+
+function compressJpgPng() {
+  return src(path.img.sourceFolder + '*.jpg')
+    .pipe(plumber())
+    .pipe(
+      imagemin([
+        imagemin.mozjpeg({
+          quality: 70,
+          progressive: true,
+        }),
+        // imagemin.optipng({optimizationLevel: 3}),
+        // imagemin.svgo({
+        //   plugins: [{removeViewBox: false},
+        //     {cleanupIDs: false}],
+        // }),
+      ])
+    )
+    .pipe(gulp.dest(path.img.compressedFolder));
+}
+
+function compressPngQuant() {
+  return src(path.img.sourceFolder + '*.png')
+    .pipe(plumber())
+    .pipe(
+      imagemin([
+        imageminPngQuant({
+          quality: [0.6, 0.65],
+          speed: 6,
+          strip: true,
+        }),
+      ])
+    )
+    .pipe(gulp.dest(path.img.compressedFolder));
+}
+// exports.compressPngQuant = compressPngQuant;
 
 // ========= erase module =========
 function eraseCompressedImg() {
@@ -338,7 +419,12 @@ let getPng = gulp.series(eraseCompressedImg, compressJpgPng, compressPngQuant);
 let getSvgSprite = gulp.series(eraseSpriteSvg, compressSvgForSprite, createSvgSprite);
 
 let getImg = gulp.series(
+  eraseCompressedImg,
+  renameJpegToJpg,
   compressSvg,
+  compressJpgPng,
+  compressPngQuant,
+  convertImgToWebp,
   getSvgSprite,
   copyImgToBuild
 );
@@ -369,11 +455,18 @@ exports.getJS = getJS;
 exports.getCSS = getCSS;
 // exports.checkHtml = checkHtml;
 
+// exports.jpegToJpg = jpegToJpg;
+// exports.eraseJpeg = eraseJpeg;
+// exports.renameJpegToJpg = renameJpegToJpg;
+
+// exports.convertImgToWebp = convertImgToWebp;
+// exports.compressJpgPng = compressJpgPng;
+
 // exports.compressSvgForSprite = compressSvgForSprite;
 // exports.compressSvg = compressSvg;
 // exports.createSvgSprite = createSvgSprite;
 
-// exports.copyImgToBuild = copyImgToBuild;
+exports.copyImgToBuild = copyImgToBuild;
 // exports.copyFontToBuild = copyFontToBuild;
 
 // exports.eraseCompressedImg = eraseCompressedImg;
