@@ -1,0 +1,25 @@
+
+.button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: $font-basic-red;
+
+  border-color: $button-hover-outline;
+}
+
+.button:focus {
+  color: $font-white;
+
+  background-color: $button-focus;
+  border-color: $button-hover-outline;
+}
+
+.button:active {
+  opacity: $active-state-opacity;
+}

@@ -1,3 +1,24 @@
 .test-description {
-  display: none;
+  // display: none;
+  padding: 16px 17px;
+}
+
+.test-description p {
+  margin: 0;
+  margin-bottom: 13px;
+
+  @include font_nunito(16px, 24px, 400, $font-basic-dark);
+}
+
+.test-description__start {
+  padding: 8px 18px;
+
+  border-color: $button-grey-border;
+}
+
+.test-description__escape {
+  margin-left: 14px;
+  padding: 8px 18px;
+
+  border-color: $button-grey-border;
 }
