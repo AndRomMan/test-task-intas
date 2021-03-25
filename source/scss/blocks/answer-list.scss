@@ -1,0 +1,10 @@
+
+.answer-list {
+  display: flex;
+
+  list-style: none;
+}
+
+.answer-list--full {
+  flex-direction: column;
+}

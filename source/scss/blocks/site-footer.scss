@@ -10,9 +10,20 @@
 }
 
 .site-footer__copyright a {
+  outline: none;
+
   @include font_nunito(12px, 16px, 400, $font-basic-dark);
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &:focus {
+    color: $font-basic-red;
+    text-decoration: underline;
+  }
+
+  &:active {
+    opacity: $active-state-opacity;
   }
 }

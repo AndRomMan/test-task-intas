@@ -43,19 +43,13 @@
 }
 
 .navbar-list__btn:hover {
-  border-color: $button-hover-outline;
-}
-
-.navbar-list__btn:focus {
-  color: $font-white;
-
-  background-color: $button-focus;
-
   &::before {
-    background-color: $button-bullet-back-focus;
+    background-color: $button-focus;
   }
 }
 
-.navbar-list__btn:active {
-  opacity: $active-state-opacity;
+.navbar-list__btn:focus {
+  &::before {
+    background-color: $button-bullet-back-focus;
+  }
 }

@@ -95,7 +95,7 @@ a {
   border-color: #d32f2f; }
 
 .button:active {
-  opacity: 0.7; }
+  opacity: 0.6; }
 
 .site-header__title {
   margin-top: 29px;
@@ -164,7 +164,7 @@ a {
   border-color: #d32f2f; }
 
 .navbar-btn:active {
-  opacity: 0.7; }
+  opacity: 0.6; }
 
 .navbar-btn__arrow {
   width: 14px;
@@ -216,17 +216,11 @@ a {
     background-color: #000000;
     border-radius: 50%; }
 
-.navbar-list__btn:hover {
-  border-color: #d32f2f; }
-
-.navbar-list__btn:focus {
-  color: #ffffff;
+.navbar-list__btn:hover::before {
   background-color: #d32f2f; }
-  .navbar-list__btn:focus::before {
-    background-color: #ffffff; }
 
-.navbar-list__btn:active {
-  opacity: 0.7; }
+.navbar-list__btn:focus::before {
+  background-color: #ffffff; }
 
 .test-header-wrapper {
   display: flex;
@@ -252,26 +246,11 @@ a {
   padding: 10px 10px; }
 
 .current-test-header__out-btn {
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  outline: none;
-  cursor: pointer;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #8d8d8d; }
-
-.current-test-header__out-btn:hover {
-  border-color: #d32f2f; }
-
-.current-test-header__out-btn:active {
-  opacity: 0.7; }
-
-.current-test-header__out-btn:focus {
-  color: white;
-  background-color: #d32f2f; }
 
 .current-test-header_test-name {
   max-width: 45%;
@@ -338,6 +317,7 @@ a {
   color: #34515e; }
 
 .test-description {
+  display: none;
   padding: 16px 17px; }
 
 .test-description p {
@@ -359,7 +339,22 @@ a {
   border-color: #707070; }
 
 .test-field {
-  display: none; }
+  position: relative; }
+
+.test-form fieldset {
+  border: none; }
+
+.test-form__reset {
+  position: absolute;
+  top: -35px;
+  right: 150px; }
+
+.answer-list {
+  display: flex;
+  list-style: none; }
+
+.answer-list--full {
+  flex-direction: column; }
 
 .test-summary {
   display: none; }
@@ -377,6 +372,7 @@ a {
   color: #263238; }
 
 .site-footer__copyright a {
+  outline: none;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -384,6 +380,11 @@ a {
   color: #263238; }
   .site-footer__copyright a:hover {
     text-decoration: underline; }
+  .site-footer__copyright a:focus {
+    color: #d32f2f;
+    text-decoration: underline; }
+  .site-footer__copyright a:active {
+    opacity: 0.6; }
 
 .modal {
   position: absolute;
