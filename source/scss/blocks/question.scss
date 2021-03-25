@@ -1,0 +1,15 @@
+
+.question {
+  margin: 0;
+  margin-bottom: 11px;
+
+  @include font_nunito(16px, 24px, 400, $font-basic-dark);
+}
+
+.question__number {
+  // font: inherit;
+}
+
+.question__text {
+  // font: inherit;
+}

@@ -1,3 +1,47 @@
 .test-summary {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 92%;
+  max-height: 92%;
+  padding: 0 16px 16px 16px;
+  overflow: auto;
+
+  background-color: $test-field-back;
+}
+
+.test-summary__title {
+  margin: 0;
+
+  text-align: center;
+
+  @include font_nunito(24px, 48px, 400, $font-basic-dark);
+}
+
+.test-summary__subtitle {
+  margin: 0;
+
+  text-align: center;
+
+  @include font_nunito(13px, 16px, 400, $font-test-header);
+}
+
+.test-summary__head {
+  margin: 0;
+  margin-bottom: 27px;
+
+  @include font_nunito(16px, 20px, 400, $font-test-header);
+}
+
+.test-summary__counter {
+  //
+}
+
+.test-summary__total {
+  //
 }

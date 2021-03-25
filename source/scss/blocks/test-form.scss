@@ -1,25 +1,54 @@
 
 .test-form {
-  // display: none;
+  padding: 16px 0 9px 0;
 }
 
 .test-form fieldset {
+  margin: 0;
+  margin-bottom: 13px;
+  padding: 0;
+
   border: none;
 }
 
 
 .test-form__button-wrapper {
-  //
+  padding: 8px 15px 0 15px;
+
+  border-top: 1px solid $section-header-border;
 }
 
 
 .test-form__submit {
-  //
+  display: none;
+  padding: 6px 18px;
+
+  border-color: $button-grey-border;
+
+  @include font_nunito(14px, 19px, 400, $font-basic-dark);;
+}
+
+.test-form__retest {
+  padding: 6px 20px;
+
+  border-color: $button-grey-border;
+
+  @include font_nunito(14px, 19px, 400, $font-basic-dark);
 }
 
 
 .test-form__reset {
   position: absolute;
-  top: -35px;
-  right: 150px;
+  top: -36px;
+  right: 113px;
+
+  @include font_nunito(12px, 16px, 400, $font-test-header);
+}
+
+
+.test-form__fieldset-wrapper {
+  padding-right: 16px;
+  padding-bottom: 80px;
+  padding-left: 16px;
+  overflow: auto;
 }

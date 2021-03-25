@@ -1,0 +1,32 @@
+.summary-item {
+  margin-bottom: 6px;
+  padding-bottom: 20px;
+
+  border-bottom: 2px dashed $test-complete-border;
+}
+
+.summary-item__head {
+  margin: 0;
+  margin-bottom: 6px;
+
+  @include font_nunito(16px, 24px, 400, $font-basic-dark);
+}
+
+.summary-item__number {
+  //
+}
+
+.summary-item__result {
+  padding-left: 18px;
+
+  @include font_nunito(13px, 16px, 400, $font-basic-dark);
+}
+
+.summary-item__correct {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.summary-item__answer {
+  margin: 0;
+}

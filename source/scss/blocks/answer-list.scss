@@ -1,10 +1,75 @@
 
 .answer-list {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 17px 0 13px 30px;
 
   list-style: none;
+
+  background-color: $answer-list-back;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+
+  @include font_nunito(13px, 16px, 400, $font-basic-dark);
 }
 
 .answer-list--full {
   flex-direction: column;
+  padding: 9px 30px 9px 30px;
+}
+
+.answer-list--full .answer-list__item {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+.answer-list--full .answer-list__item:last-child {
+  margin-bottom: 0;
+}
+
+
+.answer-list__item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  width: 120px;
+  margin-right: 42px;
+  padding-left: 27px;
+}
+
+.answer-list__item:last-child {
+  margin-right: 0;
+}
+
+.answer-list label {
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+
+    width: 13px;
+    height: 13px;
+
+    background-color: $radio-button-back;
+    border: 1px solid $radio-button-border;
+    border-radius: 50%;
+  }
+}
+
+.answer-list input {
+  display: none;
+
+  cursor: pointer;
+}
+
+
+.answer-list__item input[type="radio"]:checked + label::before {
+  background-color: $radio-button-checked-back;
+  border-color: $radio-button-checked-border;
 }

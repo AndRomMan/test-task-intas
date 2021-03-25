@@ -14,12 +14,10 @@ const NAVBAR_BURGER_CLASS_CLOSED = 'navbar-btn__burger--closed';
 // инициализация navbar - меню тестов
 function initNavbarBtn() {
   if (navbar) {
-    // FIXME activate the line
-    // navbar.classList.toggle(NAVBAR_CLASS_CLOSED);
+    navbar.classList.toggle(NAVBAR_CLASS_CLOSED);
   }
 
-  // FIXME activate the line
-  // switchBtnIcon();
+  switchBtnIcon();
 
   if (navbarBtn) {
     navbarBtn.addEventListener('click', navbarBtnClickHandler);

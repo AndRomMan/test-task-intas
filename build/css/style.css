@@ -111,14 +111,14 @@ a {
 .site-main {
   display: flex;
   width: 100%;
-  min-width: 320px;
+  min-width: 992px;
   max-width: 1200px;
   min-height: 738px;
   background-color: #fafafa; }
 
 .navbar {
   flex-shrink: 0;
-  min-width: 200px;
+  width: 200px;
   background-color: #eceff1; }
 
 .navbar--closed {
@@ -252,9 +252,10 @@ a {
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #8d8d8d; }
 
-.current-test-header_test-name {
+.current-test-header__test-name {
   max-width: 45%;
   margin: 0;
+  margin-left: 45px;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
@@ -341,23 +342,196 @@ a {
 .test-field {
   position: relative; }
 
+.test-form {
+  padding: 16px 0 9px 0; }
+
 .test-form fieldset {
+  margin: 0;
+  margin-bottom: 13px;
+  padding: 0;
   border: none; }
+
+.test-form__button-wrapper {
+  padding: 8px 15px 0 15px;
+  border-top: 1px solid #cfd8dc; }
+
+.test-form__submit {
+  display: none;
+  padding: 6px 18px;
+  border-color: #707070;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
+
+.test-form__retest {
+  padding: 6px 20px;
+  border-color: #707070;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
 
 .test-form__reset {
   position: absolute;
-  top: -35px;
-  right: 150px; }
+  top: -36px;
+  right: 113px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #8d8d8d; }
+
+.test-form__fieldset-wrapper {
+  padding-right: 16px;
+  padding-bottom: 80px;
+  padding-left: 16px;
+  overflow: auto; }
+
+.question {
+  margin: 0;
+  margin-bottom: 11px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
 
 .answer-list {
   display: flex;
-  list-style: none; }
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 17px 0 13px 30px;
+  list-style: none;
+  background-color: #efefef;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
 
 .answer-list--full {
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 9px 30px 9px 30px; }
+
+.answer-list--full .answer-list__item {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 20px; }
+
+.answer-list--full .answer-list__item:last-child {
+  margin-bottom: 0; }
+
+.answer-list__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  margin-right: 42px;
+  padding-left: 27px; }
+
+.answer-list__item:last-child {
+  margin-right: 0; }
+
+.answer-list label {
+  cursor: pointer; }
+  .answer-list label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 13px;
+    height: 13px;
+    background-color: #ffffff;
+    border: 1px solid #afafaf;
+    border-radius: 50%; }
+
+.answer-list input {
+  display: none;
+  cursor: pointer; }
+
+.answer-list__item input[type="radio"]:checked + label::before {
+  background-color: #ff6659;
+  border-color: #d32f2f; }
 
 .test-summary {
-  display: none; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 92%;
+  max-height: 92%;
+  padding: 0 16px 16px 16px;
+  overflow: auto;
+  background-color: #fafafa; }
+
+.test-summary__title {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 48px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
+
+.test-summary__subtitle {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #8d8d8d; }
+
+.test-summary__head {
+  margin: 0;
+  margin-bottom: 27px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #8d8d8d; }
+
+.summary-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.summary-item {
+  margin-bottom: 6px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #e0e0e0; }
+
+.summary-item__head {
+  margin: 0;
+  margin-bottom: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
+
+.summary-item__result {
+  padding-left: 18px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+  color: #263238; }
+
+.summary-item__correct {
+  margin: 0;
+  margin-bottom: 8px; }
+
+.summary-item__answer {
+  margin: 0; }
 
 .site-footer {
   margin-top: auto; }

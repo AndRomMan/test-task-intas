@@ -26,7 +26,7 @@
     </header>
 
     <main class="site-main">
-      <h1 class="visually-hidden">Сборник тестов по теме "автоматизация технологических процессов"</h1>
+      <h1 class="visually-hidden">Сборник тестов</h1>
 
       <nav class="navbar">
         <header class="navbar__header navbar-header">
@@ -75,12 +75,12 @@
           <div class="current-test-header">
             <button class="current-test-header__out-btn button" type="button">Выход</button>
 
-            <p class="current-test-header_test-name">Тест 1</p>
+            <p class="current-test-header__test-name">Тест 1</p>
 
             <div class="counter-wrapper">
 
               <div class="test-counter">
-                <span class="test-counter__current">2</span>
+                <span class="test-counter__current">0</span>
                 <span>&#47;</span>
                 <span class="test-counter__total">5</span>
               </div>
@@ -119,196 +119,201 @@
 
           <form class="test-form" action="#" method="GET">
 
-            <fieldset>
-              <p class="question">
-                <span class="question__number">1.</span>
-                <span>Вопрос</span>
-              </p>
+            <div class="test-form__fieldset-wrapper">
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">1.</span>
+                  <span class="question__text">Вопрос</span>
+                </p>
 
-              <ul class="answer-list">
-                <li class="answer-list__item">
-                  <input id="question-1-a" type="radio" name="question-1" value="1a">
-                  <label for="question-1-a">Вариант А</label>
-                </li>
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-1-a" type="radio" name="question-1" value="1a">
+                    <label for="question-1-a">Вариант А</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-1-b" type="radio" name="question-1" value="1b">
-                  <label for="question-1-b">Вариант Б</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-1-b" type="radio" name="question-1" value="1b">
+                    <label for="question-1-b">Вариант Б</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-1-c" type="radio" name="question-1" value="1c">
-                  <label for="question-1-c">Вариант В</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-1-c" type="radio" name="question-1" value="1c">
+                    <label for="question-1-c">Вариант В</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-1-d" type="radio" name="question-1" value="1d">
-                  <label for="question-1-d">Вариант Г</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-1-d" type="radio" name="question-1" value="1d">
+                    <label for="question-1-d">Вариант Г</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-1-e" type="radio" name="question-1" value="1e">
-                  <label for="question-1-e">Вариант Д</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-1-e" type="radio" name="question-1" value="1e">
+                    <label for="question-1-e">Вариант Д</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-1-f" type="radio" name="question-1" value="1f">
-                  <label for="question-1-f">Вариант Е</label>
-                </li>
-              </ul>
+                  <li class="answer-list__item">
+                    <input id="question-1-f" type="radio" name="question-1" value="1f">
+                    <label for="question-1-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
 
-            </fieldset>
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">2.</span>
+                  <span>Вопрос</span>
+                </p>
 
-            <fieldset>
-              <p class="question">
-                <span class="question__number">2.</span>
-                <span>Вопрос</span>
-              </p>
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-2-a" type="radio" name="question-2" value="2a">
+                    <label for="question-2-a">Вариант А</label>
+                  </li>
 
-              <ul class="answer-list">
-                <li class="answer-list__item">
-                  <input id="question-2-a" type="radio" name="question-2" value="2a">
-                  <label for="question-2-a">Вариант А</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-2-b" type="radio" name="question-2" value="2b">
+                    <label for="question-2-b">Вариант Б</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-2-b" type="radio" name="question-2" value="2b">
-                  <label for="question-2-b">Вариант Б</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-2-c" type="radio" name="question-2" value="2c">
+                    <label for="question-2-c">Вариант В</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-2-c" type="radio" name="question-2" value="2c">
-                  <label for="question-2-c">Вариант В</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-2-d" type="radio" name="question-2" value="2d">
+                    <label for="question-2-d">Вариант Г</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-2-d" type="radio" name="question-2" value="2d">
-                  <label for="question-2-d">Вариант Г</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-2-e" type="radio" name="question-2" value="2e">
+                    <label for="question-2-e">Вариант Д</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-2-e" type="radio" name="question-2" value="2e">
-                  <label for="question-2-e">Вариант Д</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-2-f" type="radio" name="question-2" value="2f">
+                    <label for="question-2-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
 
-                <li class="answer-list__item">
-                  <input id="question-2-f" type="radio" name="question-2" value="2f">
-                  <label for="question-2-f">Вариант Е</label>
-                </li>
-              </ul>
-            </fieldset>
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">3.</span>
+                  <span>Вопрос</span>
+                </p>
 
-            <fieldset>
-              <p class="question">
-                <span class="question__number">3.</span>
-                <span>Вопрос</span>
-              </p>
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-3-a" type="radio" name="question-3" value="3a">
+                    <label for="question-3-a">Вариант А</label>
+                  </li>
 
-              <ul class="answer-list">
-                <li class="answer-list__item">
-                  <input id="question-3-a" type="radio" name="question-3" value="3a">
-                  <label for="question-3-a">Вариант А</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-3-b" type="radio" name="question-3" value="3b">
+                    <label for="question-3-b">Вариант Б</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-3-b" type="radio" name="question-3" value="3b">
-                  <label for="question-3-b">Вариант Б</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-3-c" type="radio" name="question-3" value="3c">
+                    <label for="question-3-c">Вариант В</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-3-c" type="radio" name="question-3" value="3c">
-                  <label for="question-3-c">Вариант В</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-3-d" type="radio" name="question-3" value="3d">
+                    <label for="question-3-d">Вариант Г</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-3-d" type="radio" name="question-3" value="3d">
-                  <label for="question-3-d">Вариант Г</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-3-e" type="radio" name="question-3" value="3e">
+                    <label for="question-3-e">Вариант Д</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-3-e" type="radio" name="question-3" value="3e">
-                  <label for="question-3-e">Вариант Д</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-3-f" type="radio" name="question-3" value="3f">
+                    <label for="question-3-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
 
-                <li class="answer-list__item">
-                  <input id="question-3-f" type="radio" name="question-3" value="3f">
-                  <label for="question-3-f">Вариант Е</label>
-                </li>
-              </ul>
-            </fieldset>
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">4.</span>
+                  <span>Вопрос</span>
+                </p>
 
-            <fieldset>
-              <p class="question">
-                <span class="question__number">4.</span>
-                <span>Вопрос</span>
-              </p>
+                <ul class="answer-list">
+                  <li class="answer-list__item">
+                    <input id="question-4-a" type="radio" name="question-4" value="4a">
+                    <label for="question-4-a">Вариант А</label>
+                  </li>
 
-              <ul class="answer-list">
-                <li class="answer-list__item">
-                  <input id="question-4-a" type="radio" name="question-4" value="4a">
-                  <label for="question-4-a">Вариант А</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-4-b" type="radio" name="question-4" value="4b">
+                    <label for="question-4-b">Вариант Б</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-4-b" type="radio" name="question-4" value="4b">
-                  <label for="question-4-b">Вариант Б</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-4-c" type="radio" name="question-4" value="4c">
+                    <label for="question-4-c">Вариант В</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-4-c" type="radio" name="question-4" value="4c">
-                  <label for="question-4-c">Вариант В</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-4-d" type="radio" name="question-4" value="4d">
+                    <label for="question-4-d">Вариант Г</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-4-d" type="radio" name="question-4" value="4d">
-                  <label for="question-4-d">Вариант Г</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-4-e" type="radio" name="question-4" value="4e">
+                    <label for="question-4-e">Вариант Д</label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-4-e" type="radio" name="question-4" value="4e">
-                  <label for="question-4-e">Вариант Д</label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-4-f" type="radio" name="question-4" value="4f">
+                    <label for="question-4-f">Вариант Е</label>
+                  </li>
+                </ul>
+              </fieldset>
 
-                <li class="answer-list__item">
-                  <input id="question-4-f" type="radio" name="question-4" value="4f">
-                  <label for="question-4-f">Вариант Е</label>
-                </li>
-              </ul>
-            </fieldset>
+              <fieldset>
+                <p class="question">
+                  <span class="question__number">5.</span>
+                  <span>Вопрос</span>
+                </p>
 
-            <fieldset>
-              <p class="question">
-                <span class="question__number">5.</span>
-                <span>Вопрос</span>
-              </p>
+                <ul class="answer-list answer-list--full">
+                  <li class="answer-list__item">
+                    <input id="question-5-a" type="radio" name="question-5" value="5a">
+                    <label for="question-5-a">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </label>
+                  </li>
 
-              <ul class="answer-list answer-list--full">
-                <li class="answer-list__item">
-                  <input id="question-5-a" type="radio" name="question-5" value="5a">
-                  <label for="question-5-a">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </label>
-                </li>
+                  <li class="answer-list__item">
+                    <input id="question-5-b" type="radio" name="question-5" value="5b">
+                    <label for="question-5-b">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.
+                    </label>
+                  </li>
 
-                <li class="answer-list__item">
-                  <input id="question-5-b" type="radio" name="question-5" value="5b">
-                  <label for="question-5-b">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.
-                  </label>
-                </li>
-
-                <li class="answer-list__item">
-                  <input id="question-5-c" type="radio" name="question-5" value="5c">
-                  <label for="question-5-c">
-                    Lorem ipsum dolor sit amet, aliquam sollicitudin odio sit amet.
-                  </label>
-                </li>
-              </ul>
-            </fieldset>
+                  <li class="answer-list__item">
+                    <input id="question-5-c" type="radio" name="question-5" value="5c">
+                    <label for="question-5-c">
+                      Lorem ipsum dolor sit amet, aliquam sollicitudin odio sit amet.
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+            </div>
 
             <div class="test-form__button-wrapper">
               <button class="test-form__submit button" type="submit">
                 Завершить
+              </button>
+
+              <button class="test-form__retest button" type="button">
+                Пройти еще раз
               </button>
 
               <button class="test-form__reset button" type="reset">
@@ -316,100 +321,107 @@
               </button>
             </div>
           </form>
+
+          <section class="test-summary">
+            <h4 class="visually-hidden">Результаты выполнения теста</h4>
+
+            <p class="test-summary__title">Тест завершён</p>
+            <p class="test-summary__subtitle">
+              Вы ответили на <span class="test-summary__counter">0</span> из <span class="test-summary__total">5</span> вопросов.
+            </p>
+
+            <p class="test-summary__head">Ваши ответы</p>
+
+            <ul class="test-summary__list summary-list">
+              <li class="summary-list__item summary-item">
+                <p class="summary-item__head">
+                  <span class="summary-item__number">1.</span>
+                  Вопрос
+                </p>
+                <div class="summary-item__result">
+                  <p class="summary-item__correct">
+                    <span>Правильный ответ: </span>
+                    <span>Вариант Б.</span>
+                  </p>
+                  <p class="summary-item__answer">
+                    <span>Вы ответили: </span>
+                    <span>Не ответили.</span>
+                  </p>
+                </div>
+              </li>
+
+              <li class="summary-list__item summary-item">
+                <p class="summary-item__head">
+                  <span class="summary-item__number">2.</span>
+                  Вопрос
+                </p>
+                <div class="summary-item__result">
+                  <p class="summary-item__correct">
+                    <span>Правильный ответ: </span>
+                    <span>Вариант В.</span>
+                  </p>
+                  <p class="summary-item__answer">
+                    <span>Вы ответили: </span>
+                    <span>Не ответили.</span>
+                  </p>
+                </div>
+              </li>
+
+              <li class="summary-list__item summary-item">
+                <p class="summary-item__head">
+                  <span class="summary-item__number">3.</span>
+                  Вопрос
+                </p>
+                <div class="summary-item__result">
+                  <p class="summary-item__correct">
+                    <span>Правильный ответ: </span>
+                    <span>Вариант Г.</span>
+                  </p>
+                  <p class="summary-item__answer">
+                    <span>Вы ответили: </span>
+                    <span>Не ответили.</span>
+                  </p>
+                </div>
+              </li>
+
+              <li class="summary-list__item summary-item">
+                <p class="summary-item__head">
+                  <span class="summary-item__number">4.</span>
+                  Вопрос
+                </p>
+                <div class="summary-item__result">
+                  <p class="summary-item__correct">
+                    <span>Правильный ответ: </span>
+                    <span>Вариант Д.</span>
+                  </p>
+                  <p class="summary-item__answer">
+                    <span>Вы ответили: </span>
+                    <span>Не ответили.</span>
+                  </p>
+                </div>
+              </li>
+
+              <li class="summary-list__item summary-item">
+                <p class="summary-item__head">
+                  <span class="summary-item__number">5.</span>
+                  Вопрос
+                </p>
+                <div class="summary-item__result">
+                  <p class="summary-item__correct">
+                    <span>Правильный ответ: </span>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.</span>
+                  </p>
+                  <p class="summary-item__answer">
+                    <span>Вы ответили: </span>
+                    <span>Не ответили.</span>
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+          </section>
         </section>
 
-        <section class="test-summary">
-          <h3 class="visually-hidden">Результаты выполнения теста</h3>
-          <p class="test-summary__title">Тест завершён</p>
-          <p class="test-summary__subtitle">
-            Вы ответили на <span class="test-summary__counter">0</span> из <span class="test-summary__total">5</span>вопросов.
-          </p>
-
-          <p>Ваши ответы</p>
-
-          <ul class="answers-list">
-            <li class="answers-list__item answers-item">
-              <span class="answers-item__number">1.</span>
-              <span class="answers-item__question">Вопрос</span>
-              <div class="answers-item__result">
-                <p>
-                  <span>Правильный ответ: </span>
-                  <span>Вариант Б.</span>
-                </p>
-                <p>
-                  Вы ответили:
-                  <span>Вы ответили: </span>
-                  <span>Не ответили.</span>
-                </p>
-              </div>
-            </li>
-            <li class="answers-list__item answers-item">
-              <span class="answers-item__number">2.</span>
-              <span class="answers-item__question">Вопрос</span>
-              <div class="answers-item__result">
-                <p>
-                  <span>Правильный ответ: </span>
-                  <span>Вариант В.</span>
-                </p>
-                <p>
-                  Вы ответили:
-                  <span>Вы ответили: </span>
-                  <span>Не ответили.</span>
-                </p>
-              </div>
-            </li>
-            <li class="answers-list__item answers-item">
-              <span class="answers-item__number">3.</span>
-              <span class="answers-item__question">Вопрос</span>
-              <div class="answers-item__result">
-                <p>
-                  <span>Правильный ответ: </span>
-                  <span>Вариант Г.</span>
-                </p>
-                <p>
-                  Вы ответили:
-                  <span>Вы ответили: </span>
-                  <span>Не ответили.</span>
-                </p>
-              </div>
-            </li>
-            <li class="answers-list__item answers-item">
-              <span class="answers-item__number">4.</span>
-              <span class="answers-item__question">Вопрос</span>
-              <div class="answers-item__result">
-                <p>
-                  <span>Правильный ответ: </span>
-                  <span>Вариант Д.</span>
-                </p>
-                <p>
-                  Вы ответили:
-                  <span>Вы ответили: </span>
-                  <span>Не ответили.</span>
-                </p>
-              </div>
-            </li>
-            <li class="answers-list__item answers-item">
-              <span class="answers-item__number">5.</span>
-              <span class="answers-item__question">Вопрос</span>
-              <div class="answers-item__result">
-                <p>
-                  <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet..
-                  </span>
-                </p>
-                <p>
-                  Вы ответили:
-                  <span>Вы ответили: </span>
-                  <span>Не ответили.</span>
-                </p>
-              </div>
-            </li>
-          </ul>
-
-          <div class="button-block">
-            <button class="test-summary__retest button" type="button"> Пройти еще раз</button>
-          </div>
-        </section>
       </section>
     </main>
 
@@ -425,8 +437,8 @@
         <p class="modal__question">Вы уверены, что хотите выйти?</p>
         <p class="modal__warning">Все результаты будут сброшены</p>
 
-        <button class="modal__exit-btn" type="button">Выход</button>
-        <button class="modal__escape-btn" type="button">Отмена</button>
+        <button class="modal__exit-btn button" type="button">Выход</button>
+        <button class="modal__escape-btn button" type="button">Отмена</button>
       </div>
     </div>
     <script src="js/main.min.js"></script>
