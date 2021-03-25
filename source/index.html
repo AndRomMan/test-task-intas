@@ -32,11 +32,11 @@
         <header class="navbar__header navbar-header">
           <h2 class="navbar-header__title">тесты</h2>
 
-          <button class="navbar-header__btn navbar-btn" type="button">
-            <svg class="navbar-btn__arrow" width="14" height="14" role="img">
+          <button class="navbar-header__btn navbar-button" type="button">
+            <svg class="navbar-button__arrow" width="14" height="14" role="img">
               <use xlink:href="#arrow"></use>
             </svg>
-            <svg class="navbar-btn__burger navbar-btn__burger--closed" width="14" height="12" role="img">
+            <svg class="navbar-button__burger navbar-button__burger--closed" width="14" height="12" role="img">
               <use xlink:href="#burger"></use>
             </svg>
           </button>
@@ -423,6 +423,24 @@
         </section>
 
       </section>
+
+      <div class="modal">
+        <div class="modal__card">
+          <p class="modal__prompt">Вы уверены, что хотите выйти?</p>
+          <p class="modal__warning">Все результаты будут сброшены</p>
+
+          <div class="modal__button-wrapper">
+            <button class="modal__exit-btn button" type="button">
+              Выход
+            </button>
+            <button class="modal__escape-btn button" type="button">
+              Отмена
+            </button>
+          </div>
+
+        </div>
+      </div>
+
     </main>
 
     <footer class="site-footer">
@@ -432,20 +450,8 @@
       </p>
     </footer>
 
-    <div class="modal">
-      <div class="modal__card">
-        <p class="modal__question">Вы уверены, что хотите выйти?</p>
-        <p class="modal__warning">Все результаты будут сброшены</p>
-
-        <button class="modal__exit-btn button" type="button">Выход</button>
-        <button class="modal__escape-btn button" type="button">Отмена</button>
-      </div>
-    </div>
     <script src="js/main.min.js"></script>
-    <!-- <script src="js/main.js"></script> -->
 
   </body>
 
 </html>
-
-<!-- Общие вопросы по основам автоматизации производства: определения; автоматические системы контроля, управления и регулирования; датчики; исполнительные механизмы; устройства преобразования сигналов; роботы. -->
