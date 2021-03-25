@@ -63,13 +63,25 @@
 }
 
 .answer-list input {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 5px;
 
   cursor: pointer;
+  opacity: 0;
 }
 
 
 .answer-list__item input[type="radio"]:checked + label::before {
   background-color: $radio-button-checked-back;
   border-color: $radio-button-checked-border;
+}
+
+.answer-list__item input[type="radio"]:focus + label {
+  outline: 1px solid $button-hover-outline;
+  outline-offset: 3px;
+}
+
+.answer-list__item label:active {
+  opacity: $active-state-opacity;
 }

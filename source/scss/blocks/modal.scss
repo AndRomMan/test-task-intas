@@ -1,7 +1,64 @@
 .modal {
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 
   display: none;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 
   background-color: $modal-overlay-back;
+}
+
+.modal__card {
+  width: 320px;
+  height: 144px;
+  margin-top: -50px;
+  margin-left: 6px;
+  padding: 20px;
+
+  background-color: $modal-back;
+  border-radius: $button-border-radius;
+  box-shadow: 0 0 14px rgba($basic-dark, 0.14);
+}
+
+.modal__prompt {
+  margin: 0;
+  margin-bottom: 10px;
+
+  text-align: center;
+
+  @include font_nunito(13px, 16px, 400, $font-basic-dark);
+}
+
+.modal__warning {
+  margin: 0;
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  @include font_nunito(10px, 16px, 400, $font-basic-dark);
+}
+
+.modal__button-wrapper {
+  text-align: center;
+
+  @include font_nunito(13px, 16px, 400, $font-basic-dark);
+}
+
+.modal__exit-btn {
+  padding: 8px 20px;
+
+  border-color: $button-grey-border;
+}
+
+.modal__escape-btn {
+  margin-left: 15px;
+  padding: 8px 16px;
+
+  border-color: $button-grey-border;
 }

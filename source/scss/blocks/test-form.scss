@@ -20,7 +20,7 @@
 
 
 .test-form__submit {
-  display: none;
+  // display: none;
   padding: 6px 18px;
 
   border-color: $button-grey-border;
@@ -29,6 +29,7 @@
 }
 
 .test-form__retest {
+  display: none;
   padding: 6px 20px;
 
   border-color: $button-grey-border;

@@ -5,11 +5,11 @@ const NAVBAR_CLASS_CLOSED = 'navbar--closed';
 
 const navbarBtn = document.querySelector('.navbar-header__btn');
 
-const navbarArrowBtn = document.querySelector('.navbar-btn__arrow');
-const NAVBAR_ARROW_CLASS_CLOSED = 'navbar-btn__arrow--closed';
+const navbarArrowBtn = document.querySelector('.navbar-button__arrow');
+const NAVBAR_ARROW_CLASS_CLOSED = 'navbar-button__arrow--closed';
 
-const navbarBurgerBtn = document.querySelector('.navbar-btn__burger');
-const NAVBAR_BURGER_CLASS_CLOSED = 'navbar-btn__burger--closed';
+const navbarBurgerBtn = document.querySelector('.navbar-button__burger');
+const NAVBAR_BURGER_CLASS_CLOSED = 'navbar-button__burger--closed';
 
 // инициализация navbar - меню тестов
 function initNavbarBtn() {
