@@ -26,6 +26,7 @@
 
 # Graphics
 *.png binary
+*.fig binary
 *.jpg binary
 *.jpeg binary
 *.gif binary

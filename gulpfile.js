@@ -70,6 +70,10 @@ const path = {
     watch: source + '**/*.html',
     build,
   },
+  php: {
+    source: source + '*.php',
+    build,
+  },
   style: {
     source: source + 'scss/style.scss',
     watch: source + 'scss/**/*.scss',
@@ -368,7 +372,6 @@ function eraseMap() {
 }
 
 // ========= favicon module =========
-
 function eraseFavicon() {
   return del(path.favicon.compressedFolder);
 }
@@ -400,6 +403,10 @@ let getFaviconToBuild = gulp.series(createFavicon, copyFaviconToBuild);
 exports.getFaviconToBuild = getFaviconToBuild;
 
 // ========= copy module =========
+function copyPhpToBuild() {
+  return src(path.php.source).pipe(dest(path.php.build));
+}
+
 function copyImgToBuild() {
   return src(path.img.compressedFolder + '*.{jpg,png,svg,webp}').pipe(dest(path.img.build));
 }
@@ -428,12 +435,29 @@ let getImg = gulp.series(
 let startServer = gulp.parallel(watchFiles, browserSync);
 let getWorkFiles = gulp.series(getCSS, getJS, getHTML);
 let workStart = gulp.series(getWorkFiles, startServer);
-let buildProject = gulp.series(eraseBuild, getImg, getWorkFiles, getFaviconToBuild, copyFontToBuild, eraseMap);
-let buildAndStart = gulp.series(eraseBuild, getImg, getWorkFiles, getFaviconToBuild, copyFontToBuild, startServer);
+let buildProject = gulp.series(
+  eraseBuild,
+  getImg,
+  getWorkFiles,
+  getFaviconToBuild,
+  copyFontToBuild,
+  copyPhpToBuild,
+  eraseMap
+);
+let buildAndStart = gulp.series(
+  eraseBuild,
+  getImg,
+  getWorkFiles,
+  getFaviconToBuild,
+  copyFontToBuild,
+  copyPhpToBuild,
+  startServer
+);
 
 // ========= exports =========
 // let getSvgToBuild = gulp.series(compressSvg, copyImgToBuild);
 // exports.getSvgToBuild = getSvgToBuild;
+
 // ========= exports =========
 exports.getSvgSprite = getSvgSprite;
 // exports.eraseBuild = eraseBuild;
@@ -463,6 +487,7 @@ exports.getCSS = getCSS;
 // exports.createSvgSprite = createSvgSprite;
 
 exports.copyImgToBuild = copyImgToBuild;
+exports.copyPhpToBuild = copyPhpToBuild;
 // exports.copyFontToBuild = copyFontToBuild;
 
 // exports.eraseCompressedImg = eraseCompressedImg;

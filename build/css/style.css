@@ -407,7 +407,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 17px 0 13px 30px;
+  padding: 17px 0 3px 30px;
   list-style: none;
   background-color: #efefef;
   border: 1px solid transparent;
@@ -436,6 +436,7 @@ a {
   align-items: center;
   width: 120px;
   margin-right: 42px;
+  margin-bottom: 10px;
   padding-left: 27px; }
 
 .answer-list__item:last-child {

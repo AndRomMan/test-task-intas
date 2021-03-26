@@ -19,6 +19,7 @@ package-lock.json
 *.psd
 *.sublime*
 technology/
+task/
 node_modules/
 npm-debug.*
 source/css/
