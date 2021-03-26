@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-.navbar-list__btn {
+.navbar-list__button {
   position: relative;
 
   width: 100%;
@@ -42,13 +42,13 @@
   }
 }
 
-.navbar-list__btn:hover {
+.navbar-list__button:hover {
   &::before {
     background-color: $button-focus;
   }
 }
 
-.navbar-list__btn:focus {
+.navbar-list__button:focus {
   &::before {
     background-color: $button-bullet-back-focus;
   }

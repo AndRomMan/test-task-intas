@@ -194,7 +194,7 @@ a {
 .navbar-list__item {
   width: 100%; }
 
-.navbar-list__btn {
+.navbar-list__button {
   position: relative;
   width: 100%;
   margin-bottom: 4px;
@@ -210,7 +210,7 @@ a {
   line-height: 19px;
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #263238; }
-  .navbar-list__btn::before {
+  .navbar-list__button::before {
     content: "";
     position: absolute;
     top: 6px;
@@ -220,10 +220,10 @@ a {
     background-color: #000000;
     border-radius: 50%; }
 
-.navbar-list__btn:hover::before {
+.navbar-list__button:hover::before {
   background-color: #d32f2f; }
 
-.navbar-list__btn:focus::before {
+.navbar-list__button:focus::before {
   background-color: #ffffff; }
 
 .test-header-wrapper {
