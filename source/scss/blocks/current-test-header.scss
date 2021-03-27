@@ -1,11 +1,14 @@
 
 .current-test-header {
-  // display: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px 10px;
+}
+
+.current-test-header--closed {
+  display: none;
 }
 
 .current-test-header__out-btn {

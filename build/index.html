@@ -69,10 +69,10 @@
       <section class="test-section">
         <h2 class="visually-hidden">Поле для вывода тестов и результатов</h2>
 
-        <header class="test-header-wrapper">
-          <p class="description-test-header">Описание</p>
+        <header class="test-header-wrapper test-header-wrapper--closed">
+          <p class="description-test-header description-test-header--closed">Описание</p>
 
-          <div class="current-test-header">
+          <div class="current-test-header current-test-header--closed">
             <button class="current-test-header__out-btn button" type="button">Выход</button>
 
             <p class="current-test-header__test-name">Тест 1</p>
@@ -93,18 +93,18 @@
                 <span class="timer__seconds">12</span>
               </div>
             </div>
-
           </div>
         </header>
 
+        <!-- <section class="test-prompt test-prompt--closed"> -->
         <section class="test-prompt">
           <h2 class="test-prompt__title">Выберите тест из списка</h2>
         </section>
 
-        <section class="test-description">
+        <section class="test-description test-description--closed">
           <h3 class="visually-hidden">Описание теста</h3>
 
-          <p>
+          <p class="test-description__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.
           </p>
 
@@ -114,7 +114,7 @@
           </div>
         </section>
 
-        <section class="test-field">
+        <section class="test-field test-field--closed">
           <h3 class="visually-hidden">Поле теста</h3>
 
           <form class="test-form" action="#" method="GET">
@@ -308,7 +308,7 @@
             </div>
 
             <div class="test-form__button-wrapper">
-              <button class="test-form__submit button" type="submit">
+              <button class="test-form__submit button" type="button">
                 Завершить
               </button>
 
@@ -424,16 +424,16 @@
 
       </section>
 
-      <div class="modal">
+      <div class="modal modal--closed">
         <div class="modal__card">
           <p class="modal__prompt">Вы уверены, что хотите выйти?</p>
           <p class="modal__warning">Все результаты будут сброшены</p>
 
           <div class="modal__button-wrapper">
-            <button class="modal__exit-btn button" type="button">
+            <button class="modal__exit-button button" type="button">
               Выход
             </button>
-            <button class="modal__escape-btn button" type="button">
+            <button class="modal__escape-button button" type="button">
               Отмена
             </button>
           </div>

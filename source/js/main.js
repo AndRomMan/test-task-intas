@@ -14,3 +14,17 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 //     }
 //   };
 // }
+
+function openBlock(block, closedClass) {
+  if (block.classList.contains(closedClass)) {
+    block.classList.remove(closedClass);
+  }
+}
+
+function closeBlock(block, closedClass) {
+  if (block.classList.contains(closedClass)) {
+    return;
+  } else {
+    block.classList.add(closedClass);
+  }
+}

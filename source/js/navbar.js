@@ -18,7 +18,6 @@ const ID_1 = 'test-1';
 const ID_2 = 'test-2';
 const ID_3 = 'test-3';
 const ID_4 = 'test-4';
-const ID_5 = 'test-5';
 
 initNavbar();
 
@@ -29,7 +28,7 @@ function initNavbar() {
   }
 
   switchIconOfNavbarHeaderBtn();
-  navbarTestBtnsInit();
+  initNavbarTestBtns();
   serverAjaxRequest();
 
   if (navbarHeaderBtn) {
@@ -38,7 +37,7 @@ function initNavbar() {
 }
 
 // инициализация кнопок выбора теста
-function navbarTestBtnsInit() {
+function initNavbarTestBtns() {
   if (navbarTestBtns) {
     navbarTestBtns.forEach((element) => {
       element.addEventListener('click', navbarTestBtnClickHandler);
@@ -46,24 +45,34 @@ function navbarTestBtnsInit() {
   }
 }
 
-function navbarTestBtnClickHandler(evt) {
-  let testId = evt.target.id;
-  if (testId === ID_1) {
-    console.log(jsonTestData[0].name);
-  } else if (testId === ID_2) {
-    console.log(jsonTestData[1].name);
-  } else if (testId === ID_3) {
-    console.log(jsonTestData[2].name);
-  } else if (testId === ID_4) {
-    console.log(jsonTestData[3].name);
-  } else if (testId === ID_5) {
-    console.log(jsonTestData[4].name);
+function stopInitNavbarTestBtns() {
+  if (navbarTestBtns) {
+    navbarTestBtns.forEach((element) => {
+      element.removeEventListener('click', navbarTestBtnClickHandler);
+    });
   }
 }
 
-function navbarBtnClickHandler(evt) {
-  console.log(evt.type);
+function navbarTestBtnClickHandler(evt) {
+  let targetBtn = evt.target;
+  let testId = targetBtn.id;
+  let testDescription;
 
+  if (testId === ID_1) {
+    testDescription = jsonTestData[0].description;
+  } else if (testId === ID_2) {
+    testDescription = jsonTestData[1].description;
+  } else if (testId === ID_3) {
+    testDescription = jsonTestData[2].description;
+  } else if (testId === ID_4) {
+    testDescription = jsonTestData[3].description;
+  }
+
+  setTestDescriptionText(testDescription);
+  openDescription();
+}
+
+function navbarBtnClickHandler() {
   navbar.classList.toggle(NAVBAR_CLASS_CLOSED);
   switchIconOfNavbarHeaderBtn();
 }

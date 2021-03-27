@@ -6,26 +6,21 @@ let jsonTestData;
 
 function serverAjaxRequest() {
   let request = new XMLHttpRequest();
-  request.open('GET', 'http://intas-site/test_data.php');
+  // request.open('GET', 'http://intas-site/test_data.php');
+  request.open('GET', 'https://demindesign.ru/intas-test/tests.php');
   request.send();
   request.addEventListener('readystatechange', function () {
     if (request.readyState === 4 && request.status === 200) {
       jsonTestData = JSON.parse(request.response);
-      setTestFields();
-      // console.log(jsonTestData);
+      setTestName();
     }
   });
 }
 
-function setTestFields() {
-  setTestName();
-}
-
+// заполняем поля с названиями тестов
 function setTestName() {
   if (navbarTestBtns) {
     for (let i = 0; i < navbarTestBtns.length; i++) {
-      // console.log(navbarTestBtns[i]);
-      console.log(navbarTestBtns[i].textContent);
       navbarTestBtns[i].textContent = jsonTestData[i].name;
     }
   }

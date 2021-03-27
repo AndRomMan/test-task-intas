@@ -1,9 +1,12 @@
 .test-description {
-  display: none;
   padding: 16px 17px;
 }
 
-.test-description p {
+.test-description--closed {
+  display: none;
+}
+
+.test-description__text {
   margin: 0;
   margin-bottom: 13px;
 

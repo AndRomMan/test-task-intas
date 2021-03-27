@@ -1,6 +1,9 @@
 .test-header-wrapper {
   display: flex;
-  // display: none;
 
   @include section-header;
+}
+
+.test-header-wrapper--closed {
+  display: none;
 }

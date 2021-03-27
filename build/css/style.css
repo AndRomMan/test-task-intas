@@ -231,8 +231,11 @@ a {
   min-height: 51px;
   border-bottom: 1px solid #cfd8dc; }
 
+.test-header-wrapper--closed {
+  display: none; }
+
 .description-test-header {
-  display: none;
+  display: flex;
   align-items: center;
   margin: 0;
   padding-left: 16px;
@@ -242,12 +245,18 @@ a {
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #cfcfcf; }
 
+.description-test-header--closed {
+  display: none; }
+
 .current-test-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px 10px; }
+
+.current-test-header--closed {
+  display: none; }
 
 .current-test-header__out-btn {
   font-weight: 400;
@@ -308,11 +317,14 @@ a {
   width: 100%; }
 
 .test-prompt {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 100%; }
+
+.test-prompt--closed {
+  display: none; }
 
 .test-prompt__title {
   font-weight: 400;
@@ -322,10 +334,12 @@ a {
   color: #34515e; }
 
 .test-description {
-  display: none;
   padding: 16px 17px; }
 
-.test-description p {
+.test-description--closed {
+  display: none; }
+
+.test-description__text {
   margin: 0;
   margin-bottom: 13px;
   font-weight: 400;
@@ -345,6 +359,9 @@ a {
 
 .test-field {
   position: relative; }
+
+.test-field--closed {
+  display: none; }
 
 .test-form {
   padding: 16px 0 9px 0; }
@@ -579,12 +596,15 @@ a {
   top: 0;
   left: 0;
   z-index: 10;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
   background-color: rgba(196, 196, 196, 0.7); }
+
+.modal--closed {
+  display: none; }
 
 .modal__card {
   width: 320px;
@@ -624,11 +644,11 @@ a {
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #263238; }
 
-.modal__exit-btn {
+.modal__exit-button {
   padding: 8px 20px;
   border-color: #707070; }
 
-.modal__escape-btn {
+.modal__escape-button {
   margin-left: 15px;
   padding: 8px 16px;
   border-color: #707070; }
