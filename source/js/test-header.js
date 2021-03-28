@@ -5,6 +5,7 @@
 let testHeaderWrapper = document.querySelector('.test-header-wrapper');
 let descriptionTestHeader = document.querySelector('.description-test-header');
 let currentTestHeader = document.querySelector('.current-test-header');
+let currentTestName = document.querySelector('.current-test-header__test-name');
 let currentTestHeaderOutBtn = document.querySelector('.current-test-header__out-btn');
 
 const TEST_HEADER_CLASS_CLOSED = 'test-header-wrapper--closed';
@@ -33,4 +34,10 @@ function openCurrentTestHeader() {
 
 function closeCurrentTestHeader() {
   closeBlock(currentTestHeader, CURRENT_TEST_HEADER_CLASS_CLOSED);
+}
+
+function setCurrentTestName(name) {
+  if (currentTestName) {
+    currentTestName.textContent = name;
+  }
 }

@@ -4,4 +4,5 @@
 
 function clearTestResult() {
   testForm.reset();
+  localStorage.clear();
 }

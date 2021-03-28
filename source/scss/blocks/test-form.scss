@@ -19,17 +19,19 @@
 }
 
 
-.test-form__submit {
-  // display: none;
+.test-form__complete {
   padding: 6px 18px;
 
   border-color: $button-grey-border;
 
-  @include font_nunito(14px, 19px, 400, $font-basic-dark);;
+  @include font_nunito(14px, 19px, 400, $font-basic-dark);
+}
+
+.test-form__complete--closed {
+  display: none;
 }
 
 .test-form__retest {
-  display: none;
   padding: 6px 20px;
 
   border-color: $button-grey-border;
@@ -37,6 +39,9 @@
   @include font_nunito(14px, 19px, 400, $font-basic-dark);
 }
 
+.test-form__retest--closed {
+  display: none;
+}
 
 .test-form__reset {
   position: absolute;

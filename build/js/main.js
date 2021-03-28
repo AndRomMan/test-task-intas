@@ -1,65 +1,22 @@
 'use strict';
 
-var descriptionField = document.querySelector('.test-description__text');
-var testDescriptionSection = document.querySelector('.test-description');
-var testStartBtn = document.querySelector('.test-description__start');
-var testEscapeBtn = document.querySelector('.test-description__escape');
-var DESCRIPTION_SECTION_CLASS_CLOSED = 'test-description--closed';
-
-function setTestDescriptionText(content) {
-  if (descriptionField) {
-    descriptionField.textContent = content;
-  }
-
-  initDescriptionSectionBtns();
+function clearTestResult() {
+  testForm.reset();
+  localStorage.clear();
 }
+'use strict';
 
-function initDescriptionSectionBtns() {
-  if (testStartBtn) {
-    testStartBtn.addEventListener('click', testStartBtnClickHandler);
-  }
+var userAnswers = document.querySelectorAll('input');
 
-  if (testEscapeBtn) {
-    testEscapeBtn.addEventListener('click', testEscapeBtnClickHandler);
-  }
+function checkUserAnswers() {
+  userAnswers.forEach(function (element) {
+    if (element.checked) {
+      console.log(element.id);
+      console.log(element.value);
+    }
+  });
 }
-
-function stopInitDescriptionSectionBtns() {
-  if (testStartBtn) {
-    testStartBtn.removeEventListener('click', testStartBtnClickHandler);
-  }
-
-  if (testEscapeBtn) {
-    testEscapeBtn.removeEventListener('click', testEscapeBtnClickHandler);
-  }
-}
-
-function testStartBtnClickHandler(evt) {
-  console.log(evt.type);
-  clearTestResult();
-  closeDescription();
-  openCurrentTest();
-}
-
-function testEscapeBtnClickHandler() {
-  closeDescription();
-  stopInitDescriptionSectionBtns();
-}
-
-function openDescription() {
-  openTestDescriptionSection();
-  openTestHeaderWrapper();
-  openDescriptionTestHeader();
-  closeCurrentTestHeader();
-  closePromptSection();
-}
-
-function closeDescription() {
-  closeTestDescriptionSection();
-  closeTestHeaderWrapper();
-  closeDescriptionTestHeader();
-  openPromptSection();
-}
+'use strict';
 
 function openCurrentTest() {
   stopInitNavbarTestBtns();
@@ -67,26 +24,23 @@ function openCurrentTest() {
   openCurrentTestHeader();
   openTestFieldSection();
   closePromptSection();
+  openCompleteBtn();
   initOutBtn();
   initCompleteBtn();
+  hideSummary();
 }
 
 function closeCurrentTest() {
   initNavbarTestBtns();
+  clearTestResult();
   closeTestHeaderWrapper();
   closeCurrentTestHeader();
   closeTestFieldSection();
   openPromptSection();
+  closeCompleteBtn();
+  closeRetestBtn();
   stopInitOutBtn();
   stopInitCompleteBtn();
-}
-
-function openTestDescriptionSection() {
-  openBlock(testDescriptionSection, DESCRIPTION_SECTION_CLASS_CLOSED);
-}
-
-function closeTestDescriptionSection() {
-  closeBlock(testDescriptionSection, DESCRIPTION_SECTION_CLASS_CLOSED);
 }
 'use strict';
 
@@ -117,6 +71,7 @@ var MODAL_CLASS_CLOSED = 'modal--closed';
 function openModal() {
   openBlock(modal, MODAL_CLASS_CLOSED);
   initModalButtons();
+  modalEscapeBtn.focus();
 }
 
 function closeModal() {
@@ -199,18 +154,24 @@ function navbarTestBtnClickHandler(evt) {
   var targetBtn = evt.target;
   var testId = targetBtn.id;
   var testDescription;
+  var testName;
 
   if (testId === ID_1) {
     testDescription = jsonTestData[0].description;
+    testName = jsonTestData[0].name;
   } else if (testId === ID_2) {
     testDescription = jsonTestData[1].description;
+    testName = jsonTestData[1].name;
   } else if (testId === ID_3) {
     testDescription = jsonTestData[2].description;
+    testName = jsonTestData[2].name;
   } else if (testId === ID_4) {
     testDescription = jsonTestData[3].description;
+    testName = jsonTestData[3].name;
   }
 
   setTestDescriptionText(testDescription);
+  setCurrentTestName(testName);
   openDescription();
 }
 
@@ -261,11 +222,147 @@ function setTestName() {
   }
 }
 'use strict';
+
+var summary = document.querySelector('.test-summary');
+var SHOW_SUMMARY_CLASS = 'test-summary--top';
+
+function showSummary() {
+  if (summary) {
+    summary.classList.add(SHOW_SUMMARY_CLASS);
+  }
+}
+
+function hideSummary() {
+  if (summary) {
+    summary.classList.remove(SHOW_SUMMARY_CLASS);
+  }
+}
+'use strict';
+
+function clearTestResult() {
+  testForm.reset();
+}
+'use strict';
+
+var completeBtn = document.querySelector('.test-form__complete');
+var retestBtn = document.querySelector('.test-form__retest');
+var COMPLETE_BTN_CLASS_CLOSED = 'test-form__complete--closed';
+var RETEST_BTN_CLASS_CLOSED = 'test-form__retest--closed';
+
+function openCompleteBtn() {
+  if (completeBtn) {
+    openBlock(completeBtn, COMPLETE_BTN_CLASS_CLOSED);
+    completeBtn.addEventListener('click', completeBtnClickHandler);
+  }
+}
+
+function closeCompleteBtn() {
+  if (completeBtn) {
+    closeBlock(completeBtn, COMPLETE_BTN_CLASS_CLOSED);
+    completeBtn.removeEventListener('click', completeBtnClickHandler);
+  }
+}
+
+function openRetestBtn() {
+  if (retestBtn) {
+    openBlock(retestBtn, RETEST_BTN_CLASS_CLOSED);
+    retestBtn.addEventListener('click', retestBtnClickHandler);
+  }
+}
+
+function closeRetestBtn() {
+  if (retestBtn) {
+    closeBlock(retestBtn, RETEST_BTN_CLASS_CLOSED);
+    retestBtn.removeEventListener('click', retestBtnClickHandler);
+  }
+}
+
+function completeBtnClickHandler() {
+  closeCompleteBtn();
+  openRetestBtn();
+  showSummary();
+  checkUserAnswers();
+}
+
+function retestBtnClickHandler() {
+  clearTestResult();
+  closeRetestBtn();
+  openCompleteBtn();
+  hideSummary();
+}
+'use strict';
+
+var descriptionField = document.querySelector('.test-description__text');
+var testDescriptionSection = document.querySelector('.test-description');
+var testStartBtn = document.querySelector('.test-description__start');
+var testEscapeBtn = document.querySelector('.test-description__escape');
+var DESCRIPTION_SECTION_CLASS_CLOSED = 'test-description--closed';
+
+function setTestDescriptionText(content) {
+  if (descriptionField) {
+    descriptionField.textContent = content;
+  }
+
+  initDescriptionSectionBtns();
+}
+
+function initDescriptionSectionBtns() {
+  if (testStartBtn) {
+    testStartBtn.addEventListener('click', testStartBtnClickHandler);
+  }
+
+  if (testEscapeBtn) {
+    testEscapeBtn.addEventListener('click', testEscapeBtnClickHandler);
+  }
+}
+
+function stopInitDescriptionSectionBtns() {
+  if (testStartBtn) {
+    testStartBtn.removeEventListener('click', testStartBtnClickHandler);
+  }
+
+  if (testEscapeBtn) {
+    testEscapeBtn.removeEventListener('click', testEscapeBtnClickHandler);
+  }
+}
+
+function testStartBtnClickHandler() {
+  clearTestResult();
+  closeDescription();
+  openCurrentTest();
+}
+
+function testEscapeBtnClickHandler() {
+  closeDescription();
+  stopInitDescriptionSectionBtns();
+}
+
+function openDescription() {
+  openTestDescriptionSection();
+  openTestHeaderWrapper();
+  openDescriptionTestHeader();
+  closeCurrentTestHeader();
+  closePromptSection();
+}
+
+function closeDescription() {
+  closeTestDescriptionSection();
+  closeTestHeaderWrapper();
+  closeDescriptionTestHeader();
+  openPromptSection();
+}
+
+function openTestDescriptionSection() {
+  openBlock(testDescriptionSection, DESCRIPTION_SECTION_CLASS_CLOSED);
+}
+
+function closeTestDescriptionSection() {
+  closeBlock(testDescriptionSection, DESCRIPTION_SECTION_CLASS_CLOSED);
+}
 'use strict';
 
 var testFieldSection = document.querySelector('.test-field');
 var outBtn = document.querySelector('.current-test-header__out-btn');
-var completeBtn = document.querySelector('.test-form__submit');
 var testForm = document.querySelector('.test-form');
 var TEST_FIELD_SECTION_CLASS_CLOSED = 'test-field--closed';
 
@@ -275,10 +372,6 @@ function openTestFieldSection() {
 
 function closeTestFieldSection() {
   closeBlock(testFieldSection, TEST_FIELD_SECTION_CLASS_CLOSED);
-}
-
-function clearTestResult() {
-  testForm.reset();
 }
 
 function initOutBtn() {
@@ -305,18 +398,15 @@ function initCompleteBtn() {
 
 function stopInitCompleteBtn() {
   if (completeBtn) {
-    completeBtn.remove('click', completeBtnClickHandler);
+    completeBtn.removeEventListener('click', completeBtnClickHandler);
   }
-}
-
-function completeBtnClickHandler(evt) {
-  console.log(evt.type);
 }
 'use strict';
 
 var testHeaderWrapper = document.querySelector('.test-header-wrapper');
 var descriptionTestHeader = document.querySelector('.description-test-header');
 var currentTestHeader = document.querySelector('.current-test-header');
+var currentTestName = document.querySelector('.current-test-header__test-name');
 var currentTestHeaderOutBtn = document.querySelector('.current-test-header__out-btn');
 var TEST_HEADER_CLASS_CLOSED = 'test-header-wrapper--closed';
 var DESCRIPTION_TEST_HEADER_CLASS_CLOSED = 'description-test-header--closed';
@@ -344,5 +434,11 @@ function openCurrentTestHeader() {
 
 function closeCurrentTestHeader() {
   closeBlock(currentTestHeader, CURRENT_TEST_HEADER_CLASS_CLOSED);
+}
+
+function setCurrentTestName(name) {
+  if (currentTestName) {
+    currentTestName.textContent = name;
+  }
 }
 //# sourceMappingURL=main.js.map

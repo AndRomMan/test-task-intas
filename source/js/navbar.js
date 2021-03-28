@@ -57,18 +57,24 @@ function navbarTestBtnClickHandler(evt) {
   let targetBtn = evt.target;
   let testId = targetBtn.id;
   let testDescription;
+  let testName;
 
   if (testId === ID_1) {
     testDescription = jsonTestData[0].description;
+    testName = jsonTestData[0].name;
   } else if (testId === ID_2) {
     testDescription = jsonTestData[1].description;
+    testName = jsonTestData[1].name;
   } else if (testId === ID_3) {
     testDescription = jsonTestData[2].description;
+    testName = jsonTestData[2].name;
   } else if (testId === ID_4) {
     testDescription = jsonTestData[3].description;
+    testName = jsonTestData[3].name;
   }
 
   setTestDescriptionText(testDescription);
+  setCurrentTestName(testName);
   openDescription();
 }
 

@@ -11,6 +11,7 @@ const MODAL_CLASS_CLOSED = 'modal--closed';
 function openModal() {
   openBlock(modal, MODAL_CLASS_CLOSED);
   initModalButtons();
+  modalEscapeBtn.focus();
 }
 
 function closeModal() {

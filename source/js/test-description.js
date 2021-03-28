@@ -38,8 +38,7 @@ function stopInitDescriptionSectionBtns() {
   }
 }
 
-function testStartBtnClickHandler(evt) {
-  console.log(evt.type);
+function testStartBtnClickHandler() {
   clearTestResult();
   closeDescription();
   openCurrentTest();
@@ -65,31 +64,6 @@ function closeDescription() {
   closeTestHeaderWrapper();
   closeDescriptionTestHeader();
   openPromptSection();
-}
-
-function openCurrentTest() {
-  stopInitNavbarTestBtns();
-
-  openTestHeaderWrapper();
-  openCurrentTestHeader();
-  openTestFieldSection();
-  closePromptSection();
-
-  initOutBtn();
-  initCompleteBtn();
-}
-
-function closeCurrentTest() {
-  initNavbarTestBtns();
-
-  closeTestHeaderWrapper();
-  closeCurrentTestHeader();
-  closeTestFieldSection();
-  openPromptSection();
-
-  // FIXME снять обработчики с кнопок "выход" и "завершить"
-  stopInitOutBtn();
-  stopInitCompleteBtn();
 }
 
 function openTestDescriptionSection() {

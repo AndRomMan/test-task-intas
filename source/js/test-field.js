@@ -4,7 +4,6 @@
 
 let testFieldSection = document.querySelector('.test-field');
 let outBtn = document.querySelector('.current-test-header__out-btn');
-let completeBtn = document.querySelector('.test-form__submit');
 
 let testForm = document.querySelector('.test-form');
 
@@ -16,10 +15,6 @@ function openTestFieldSection() {
 
 function closeTestFieldSection() {
   closeBlock(testFieldSection, TEST_FIELD_SECTION_CLASS_CLOSED);
-}
-
-function clearTestResult() {
-  testForm.reset();
 }
 
 function initOutBtn() {
@@ -46,13 +41,6 @@ function initCompleteBtn() {
 
 function stopInitCompleteBtn() {
   if (completeBtn) {
-    completeBtn.remove('click', completeBtnClickHandler);
+    completeBtn.removeEventListener('click', completeBtnClickHandler);
   }
 }
-
-function completeBtnClickHandler(evt) {
-  console.log(evt.type);
-}
-
-// stopInitOutBtn();
-// stopInitCompleteBtn();

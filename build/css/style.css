@@ -376,7 +376,7 @@ a {
   padding: 8px 15px 0 15px;
   border-top: 1px solid #cfd8dc; }
 
-.test-form__submit {
+.test-form__complete {
   padding: 6px 18px;
   border-color: #707070;
   font-weight: 400;
@@ -385,8 +385,10 @@ a {
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #263238; }
 
+.test-form__complete--closed {
+  display: none; }
+
 .test-form__retest {
-  display: none;
   padding: 6px 20px;
   border-color: #707070;
   font-weight: 400;
@@ -394,6 +396,9 @@ a {
   line-height: 19px;
   font-family: "Nunito", "Arial", "Helvetica", sans-serif;
   color: #263238; }
+
+.test-form__retest--closed {
+  display: none; }
 
 .test-form__reset {
   position: absolute;
@@ -502,6 +507,9 @@ a {
   padding: 0 16px 16px 16px;
   overflow: auto;
   background-color: #fafafa; }
+
+.test-summary--top {
+  z-index: 1; }
 
 .test-summary__title {
   margin: 0;

@@ -74,6 +74,13 @@
   * [CSS validator](https://jigsaw.w3.org/css-validator/validator.html.ru)
 * Страница загружена на хостинг и проведено тестирование производительности
   * [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+
+* * *
+#### Не реализовано
+  * закрытие модального окна по нажатию клавиши Esc и по клику на overlay.
+  * таймер отсчета времени прохождения теста
+
+
 * * *
 ### Краткая инструкция по развертыванию проекта
 
