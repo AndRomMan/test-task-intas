@@ -75,6 +75,8 @@ function navbarTestBtnClickHandler(evt) {
 
   fillTestQuestions(testId);
 
+  fillSummaryQuestions(testId);
+
   setTestDescriptionText(testDescription);
   setCurrentTestName(testName);
   openDescription();

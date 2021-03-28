@@ -3,10 +3,25 @@
 function clearTestResult() {
   testForm.reset();
   localStorage.clear();
+  checkedInputCounter = 0;
+  setCheckedFieldCounter(checkedInputCounter);
+}
+'use strict';
+
+var checkedFieldCounterBlock = document.querySelector('.test-counter__current');
+var correctcheckedInputCounterBlock = document.querySelector('.test-summary__counter');
+var checkedInputCounter = 0;
+
+function setCheckedFieldCounter(num) {
+  if (checkedFieldCounterBlock) {
+    checkedFieldCounterBlock.textContent = num;
+  }
 }
 'use strict';
 
 var userAnswers = document.querySelectorAll('input');
+var summaryUserAnswers = document.querySelectorAll('.summary-user-answer-js');
+var USER_EMPTY_ANSWER = 'Не ответили';
 var answerKeys = {
   key1: 'question-1',
   key2: 'question-2',
@@ -15,26 +30,38 @@ var answerKeys = {
   key5: 'question-5'
 };
 
-function storeUserTestAnswers() {
+function setUserTestAnswersInSummary() {
+  setNotAnswer();
+  storeUserTestAnswersToLocalStorage();
+  getUserTestAnswers();
+}
+
+function setNotAnswer() {
+  for (var key in answerKeys) {
+    if (key) {
+      localStorage.setItem(answerKeys[key], USER_EMPTY_ANSWER);
+    }
+  }
+}
+
+function storeUserTestAnswersToLocalStorage() {
   userAnswers.forEach(function (element) {
+    var key = element.name;
+
     if (element.checked) {
-      console.log('input name : ');
-      console.log(element.name);
-      console.log('input value : ');
-      console.log(element.value);
-      localStorage.setItem(element.name, element.value);
+      checkedInputCounter++;
+      setCheckedFieldCounter(checkedInputCounter);
+      var next = element.nextElementSibling.textContent;
+      localStorage.setItem(key, next);
     }
   });
 }
 
 function getUserTestAnswers() {
-  for (var key in answerKeys) {
-    if (key) {
-      console.log('localStorage Key');
-      console.log(answerKeys[key]);
-      console.log('localStorage Item');
-      console.log(localStorage.getItem(answerKeys[key]));
-    }
+  var length = summaryUserAnswers.length;
+
+  for (var i = 0; i < length; i++) {
+    summaryUserAnswers[i].textContent = localStorage.getItem('question-' + (i + 1));
   }
 }
 'use strict';
@@ -192,6 +219,7 @@ function navbarTestBtnClickHandler(evt) {
   }
 
   fillTestQuestions(testId);
+  fillSummaryQuestions(testId);
   setTestDescriptionText(testDescription);
   setCurrentTestName(testName);
   openDescription();
@@ -240,13 +268,14 @@ function serverAjaxRequest() {
     if (request.readyState === 4 && request.status === 200) {
       jsonTestData = JSON.parse(request.response);
       setTestName();
-      console.log(jsonTestData);
     }
   });
 }
 'use strict';
 
 var summary = document.querySelector('.test-summary');
+var summaryQuestions = document.querySelectorAll('.summary-question-js');
+var summaryAnswers = document.querySelectorAll('.summary-answer-js');
 var SHOW_SUMMARY_CLASS = 'test-summary--top';
 
 function showSummary() {
@@ -258,6 +287,42 @@ function showSummary() {
 function hideSummary() {
   if (summary) {
     summary.classList.remove(SHOW_SUMMARY_CLASS);
+  }
+}
+
+function fillSummaryQuestions(testId) {
+  var dataObj;
+
+  if (questionTestFields) {
+    if (testId === ID_1) {
+      dataObj = jsonTestData[0];
+    } else if (testId === ID_2) {
+      dataObj = jsonTestData[1];
+    } else if (testId === ID_3) {
+      dataObj = jsonTestData[2];
+    } else if (testId === ID_4) {
+      dataObj = jsonTestData[3];
+    }
+
+    if (summaryQuestions) {
+      assignmentSummaryQuestions(summaryQuestions, dataObj);
+    }
+
+    if (summaryAnswers) {
+      assignmentSummaryAnswers(summaryAnswers, dataObj);
+    }
+  }
+}
+
+function assignmentSummaryQuestions(arr, obj) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i].textContent = obj['question' + (i + 1)];
+  }
+}
+
+function assignmentSummaryAnswers(arr, obj) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i].textContent = obj['answer' + (i + 1)];
   }
 }
 'use strict';
@@ -300,8 +365,7 @@ function completeBtnClickHandler() {
   closeCompleteBtn();
   openRetestBtn();
   showSummary();
-  storeUserTestAnswers();
-  getUserTestAnswers();
+  setUserTestAnswersInSummary();
 }
 
 function retestBtnClickHandler() {

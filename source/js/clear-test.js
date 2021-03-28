@@ -5,4 +5,6 @@
 function clearTestResult() {
   testForm.reset();
   localStorage.clear();
+  checkedInputCounter = 0;
+  setCheckedFieldCounter(checkedInputCounter);
 }

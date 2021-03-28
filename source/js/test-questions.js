@@ -12,12 +12,6 @@ let lastQuestionAssertions = document.querySelectorAll('.question-assertion-js')
 // jsonTestData.question3
 // jsonTestData.question4
 
-// jsonTestData.answer1
-// jsonTestData.answer2
-// jsonTestData.answer3
-// jsonTestData.answer4
-// jsonTestData.answer5
-
 // jsonTestData.question5.assertion1
 // jsonTestData.question5.assertion2
 // jsonTestData.question5.assertion3

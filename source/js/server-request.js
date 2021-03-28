@@ -13,7 +13,7 @@ function serverAjaxRequest() {
     if (request.readyState === 4 && request.status === 200) {
       jsonTestData = JSON.parse(request.response);
       setTestName();
-      console.log(jsonTestData);
+      // console.log(jsonTestData);
     }
   });
 }

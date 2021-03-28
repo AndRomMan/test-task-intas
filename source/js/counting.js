@@ -2,6 +2,9 @@
 /* eslint-disable no-console */
 'use strict';
 let userAnswers = document.querySelectorAll('input');
+let summaryUserAnswers = document.querySelectorAll('.summary-user-answer-js');
+const USER_EMPTY_ANSWER = 'Не ответили';
+
 const answerKeys = {
   key1: 'question-1',
   key2: 'question-2',
@@ -9,30 +12,39 @@ const answerKeys = {
   key4: 'question-4',
   key5: 'question-5',
 };
-// localStorage.setItem('myCat', 'Tom');
-// let cat = localStorage.getItem('myCat');
 
-function storeUserTestAnswers() {
+function setUserTestAnswersInSummary() {
+  setNotAnswer();
+  storeUserTestAnswersToLocalStorage();
+  getUserTestAnswers();
+}
+
+function setNotAnswer() {
+  for (const key in answerKeys) {
+    if (key) {
+      localStorage.setItem(answerKeys[key], USER_EMPTY_ANSWER);
+    }
+  }
+}
+
+function storeUserTestAnswersToLocalStorage() {
   userAnswers.forEach((element) => {
+    let key = element.name;
+
     if (element.checked) {
-      console.log('input name : ');
-      console.log(element.name);
+      checkedInputCounter++;
+      setCheckedFieldCounter(checkedInputCounter);
 
-      console.log('input value : ');
-      console.log(element.value);
-
-      localStorage.setItem(element.name, element.value);
+      let next = element.nextElementSibling.textContent;
+      localStorage.setItem(key, next);
     }
   });
 }
 
 function getUserTestAnswers() {
-  for (const key in answerKeys) {
-    if (key) {
-      console.log('localStorage Key');
-      console.log(answerKeys[key]);
-      console.log('localStorage Item');
-      console.log(localStorage.getItem(answerKeys[key]));
-    }
+  let length = summaryUserAnswers.length;
+
+  for (let i = 0; i < length; i++) {
+    summaryUserAnswers[i].textContent = localStorage.getItem('question-' + (i + 1));
   }
 }

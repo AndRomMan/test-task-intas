@@ -41,8 +41,7 @@ function completeBtnClickHandler() {
   openRetestBtn();
   showSummary();
 
-  storeUserTestAnswers();
-  getUserTestAnswers();
+  setUserTestAnswersInSummary();
 }
 
 function retestBtnClickHandler() {
