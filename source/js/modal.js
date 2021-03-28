@@ -7,11 +7,18 @@ let modalExitBtn = document.querySelector('.modal__exit-button');
 let modalEscapeBtn = document.querySelector('.modal__escape-button');
 
 const MODAL_CLASS_CLOSED = 'modal--closed';
+const MODAL_OVERLAY = 'modal';
 
 function openModal() {
-  openBlock(modal, MODAL_CLASS_CLOSED);
-  initModalButtons();
-  modalEscapeBtn.focus();
+  if (modal) {
+    openBlock(modal, MODAL_CLASS_CLOSED);
+    initModalButtons();
+    modalEscapeBtn.focus();
+
+    // подключаем обработчик 'escape' закрытия модального
+    window.addEventListener('keydown', escapeHandler);
+    modal.addEventListener('click', overlayClickHandler);
+  }
 }
 
 function closeModal() {
@@ -42,4 +49,23 @@ function modalExitBtnClickHandler() {
 function modalEscapeBtnClickHandler() {
   closeModal();
   stopInitModalButtons();
+}
+
+// обработчики клавиши escape
+function escapeHandler(evt) {
+  if (evt.code === 'Escape') {
+    evt.preventDefault();
+    modalEscapeBtnClickHandler();
+  }
+}
+
+// обработчик клика по overlay-области
+function overlayClickHandler(evt) {
+  let element = evt.target;
+
+  if (element.classList.contains(MODAL_OVERLAY)) {
+    modalEscapeBtnClickHandler();
+  } else {
+    return;
+  }
 }

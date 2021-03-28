@@ -7,4 +7,6 @@ function clearTestResult() {
   localStorage.clear();
   checkedInputCounter = 0;
   setCheckedFieldCounter(checkedInputCounter);
+  correctUserAnswerCounter = 0;
+  setCorrectAnswerCounter(correctUserAnswerCounter);
 }

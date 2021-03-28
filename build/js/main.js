@@ -1,21 +1,43 @@
 'use strict';
 
-function clearTestResult() {
-  testForm.reset();
-  localStorage.clear();
-  checkedInputCounter = 0;
-  setCheckedFieldCounter(checkedInputCounter);
-}
-'use strict';
-
 var checkedFieldCounterBlock = document.querySelector('.test-counter__current');
-var correctcheckedInputCounterBlock = document.querySelector('.test-summary__counter');
+var correctAnswerCounterBlock = document.querySelector('.test-summary__counter');
 var checkedInputCounter = 0;
+var correctUserAnswerCounter = 0;
 
 function setCheckedFieldCounter(num) {
   if (checkedFieldCounterBlock) {
     checkedFieldCounterBlock.textContent = num;
   }
+}
+
+function setCorrectAnswerCounter(num) {
+  if (correctAnswerCounterBlock) {
+    correctAnswerCounterBlock.textContent = num;
+  }
+}
+
+function checkUserAnswers() {
+  var length = summaryAnswers.length;
+  var counter = 0;
+
+  for (var i = 0; i < length; i++) {
+    if (summaryAnswers[i].textContent === summaryUserAnswers[i].textContent) {
+      counter++;
+    }
+  }
+
+  return counter;
+}
+'use strict';
+
+function clearTestResult() {
+  testForm.reset();
+  localStorage.clear();
+  checkedInputCounter = 0;
+  setCheckedFieldCounter(checkedInputCounter);
+  correctUserAnswerCounter = 0;
+  setCorrectAnswerCounter(correctUserAnswerCounter);
 }
 'use strict';
 
@@ -115,11 +137,16 @@ var modal = document.querySelector('.modal');
 var modalExitBtn = document.querySelector('.modal__exit-button');
 var modalEscapeBtn = document.querySelector('.modal__escape-button');
 var MODAL_CLASS_CLOSED = 'modal--closed';
+var MODAL_OVERLAY = 'modal';
 
 function openModal() {
-  openBlock(modal, MODAL_CLASS_CLOSED);
-  initModalButtons();
-  modalEscapeBtn.focus();
+  if (modal) {
+    openBlock(modal, MODAL_CLASS_CLOSED);
+    initModalButtons();
+    modalEscapeBtn.focus();
+    window.addEventListener('keydown', escapeHandler);
+    modal.addEventListener('click', overlayClickHandler);
+  }
 }
 
 function closeModal() {
@@ -151,6 +178,23 @@ function modalExitBtnClickHandler() {
 function modalEscapeBtnClickHandler() {
   closeModal();
   stopInitModalButtons();
+}
+
+function escapeHandler(evt) {
+  if (evt.code === 'Escape') {
+    evt.preventDefault();
+    modalEscapeBtnClickHandler();
+  }
+}
+
+function overlayClickHandler(evt) {
+  var element = evt.target;
+
+  if (element.classList.contains(MODAL_OVERLAY)) {
+    modalEscapeBtnClickHandler();
+  } else {
+    return;
+  }
 }
 'use strict';
 
@@ -326,7 +370,6 @@ function assignmentSummaryAnswers(arr, obj) {
   }
 }
 'use strict';
-'use strict';
 
 var completeBtn = document.querySelector('.test-form__complete');
 var retestBtn = document.querySelector('.test-form__retest');
@@ -366,6 +409,8 @@ function completeBtnClickHandler() {
   openRetestBtn();
   showSummary();
   setUserTestAnswersInSummary();
+  var counterAnswers = checkUserAnswers();
+  setCorrectAnswerCounter(counterAnswers);
 }
 
 function retestBtnClickHandler() {

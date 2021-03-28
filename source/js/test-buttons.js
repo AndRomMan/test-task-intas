@@ -42,6 +42,8 @@ function completeBtnClickHandler() {
   showSummary();
 
   setUserTestAnswersInSummary();
+  let counterAnswers = checkUserAnswers();
+  setCorrectAnswerCounter(counterAnswers);
 }
 
 function retestBtnClickHandler() {

@@ -1,13 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
-// команды запуска npm-plugins для тестирования
-// npx htmlhint source/**/*.html
-// npx eslint source/**/*.js
-// npx eslint --fix source/js/*.js
-// npx stylelint source/**/*.scss
-// npx stylelint build/**/*.css
-
 'use strict';
 // подключаем Gulp
 const gulp = require('gulp');
