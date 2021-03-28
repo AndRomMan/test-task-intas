@@ -40,10 +40,9 @@ function completeBtnClickHandler() {
   closeCompleteBtn();
   openRetestBtn();
   showSummary();
-  checkUserAnswers();
-  // запустить модуль подсчета результата
-  // сохранить данные в LocalStorage
-  // открыть окно с результатами (поднять z-index) - загрузить данные из LocalStorage
+
+  storeUserTestAnswers();
+  getUserTestAnswers();
 }
 
 function retestBtnClickHandler() {

@@ -7,14 +7,35 @@ function clearTestResult() {
 'use strict';
 
 var userAnswers = document.querySelectorAll('input');
+var answerKeys = {
+  key1: 'question-1',
+  key2: 'question-2',
+  key3: 'question-3',
+  key4: 'question-4',
+  key5: 'question-5'
+};
 
-function checkUserAnswers() {
+function storeUserTestAnswers() {
   userAnswers.forEach(function (element) {
     if (element.checked) {
-      console.log(element.id);
+      console.log('input name : ');
+      console.log(element.name);
+      console.log('input value : ');
       console.log(element.value);
+      localStorage.setItem(element.name, element.value);
     }
   });
+}
+
+function getUserTestAnswers() {
+  for (var key in answerKeys) {
+    if (key) {
+      console.log('localStorage Key');
+      console.log(answerKeys[key]);
+      console.log('localStorage Item');
+      console.log(localStorage.getItem(answerKeys[key]));
+    }
+  }
 }
 'use strict';
 
@@ -170,6 +191,7 @@ function navbarTestBtnClickHandler(evt) {
     testName = jsonTestData[3].name;
   }
 
+  fillTestQuestions(testId);
   setTestDescriptionText(testDescription);
   setCurrentTestName(testName);
   openDescription();
@@ -184,6 +206,14 @@ function switchIconOfNavbarHeaderBtn() {
   if (navbarArrowBtn && navbarBurgerBtn) {
     navbarArrowBtn.classList.toggle(NAVBAR_ARROW_CLASS_CLOSED);
     navbarBurgerBtn.classList.toggle(NAVBAR_BURGER_CLASS_CLOSED);
+  }
+}
+
+function setTestName() {
+  if (navbarTestBtns) {
+    for (var i = 0; i < navbarTestBtns.length; i++) {
+      navbarTestBtns[i].textContent = jsonTestData[i].name;
+    }
   }
 }
 'use strict';
@@ -210,16 +240,9 @@ function serverAjaxRequest() {
     if (request.readyState === 4 && request.status === 200) {
       jsonTestData = JSON.parse(request.response);
       setTestName();
+      console.log(jsonTestData);
     }
   });
-}
-
-function setTestName() {
-  if (navbarTestBtns) {
-    for (var i = 0; i < navbarTestBtns.length; i++) {
-      navbarTestBtns[i].textContent = jsonTestData[i].name;
-    }
-  }
 }
 'use strict';
 
@@ -238,10 +261,6 @@ function hideSummary() {
   }
 }
 'use strict';
-
-function clearTestResult() {
-  testForm.reset();
-}
 'use strict';
 
 var completeBtn = document.querySelector('.test-form__complete');
@@ -281,7 +300,8 @@ function completeBtnClickHandler() {
   closeCompleteBtn();
   openRetestBtn();
   showSummary();
-  checkUserAnswers();
+  storeUserTestAnswers();
+  getUserTestAnswers();
 }
 
 function retestBtnClickHandler() {
@@ -439,6 +459,46 @@ function closeCurrentTestHeader() {
 function setCurrentTestName(name) {
   if (currentTestName) {
     currentTestName.textContent = name;
+  }
+}
+'use strict';
+
+var questionTestFields = document.querySelectorAll('.question-text-js');
+var lastQuestionAssertions = document.querySelectorAll('.question-assertion-js');
+
+function fillTestQuestions(testId) {
+  var dataObj;
+
+  if (questionTestFields) {
+    if (testId === ID_1) {
+      dataObj = jsonTestData[0];
+    } else if (testId === ID_2) {
+      dataObj = jsonTestData[1];
+    } else if (testId === ID_3) {
+      dataObj = jsonTestData[2];
+    } else if (testId === ID_4) {
+      dataObj = jsonTestData[3];
+    }
+
+    if (questionTestFields) {
+      assignmentQuestionNames(questionTestFields, dataObj);
+    }
+
+    if (lastQuestionAssertions) {
+      assignmentLastQuestionAssertions(lastQuestionAssertions, dataObj);
+    }
+  }
+}
+
+function assignmentQuestionNames(arr, obj) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i].textContent = obj['question' + (i + 1)];
+  }
+}
+
+function assignmentLastQuestionAssertions(arr, obj) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i].textContent = obj['question5-assertions']['assertion' + (i + 1)];
   }
 }
 //# sourceMappingURL=main.js.map

@@ -73,6 +73,8 @@ function navbarTestBtnClickHandler(evt) {
     testName = jsonTestData[3].name;
   }
 
+  fillTestQuestions(testId);
+
   setTestDescriptionText(testDescription);
   setCurrentTestName(testName);
   openDescription();
@@ -88,5 +90,14 @@ function switchIconOfNavbarHeaderBtn() {
   if (navbarArrowBtn && navbarBurgerBtn) {
     navbarArrowBtn.classList.toggle(NAVBAR_ARROW_CLASS_CLOSED);
     navbarBurgerBtn.classList.toggle(NAVBAR_BURGER_CLASS_CLOSED);
+  }
+}
+
+// заполняем поля с названиями тестов
+function setTestName() {
+  if (navbarTestBtns) {
+    for (let i = 0; i < navbarTestBtns.length; i++) {
+      navbarTestBtns[i].textContent = jsonTestData[i].name;
+    }
   }
 }

@@ -13,15 +13,7 @@ function serverAjaxRequest() {
     if (request.readyState === 4 && request.status === 200) {
       jsonTestData = JSON.parse(request.response);
       setTestName();
+      console.log(jsonTestData);
     }
   });
-}
-
-// заполняем поля с названиями тестов
-function setTestName() {
-  if (navbarTestBtns) {
-    for (let i = 0; i < navbarTestBtns.length; i++) {
-      navbarTestBtns[i].textContent = jsonTestData[i].name;
-    }
-  }
 }
