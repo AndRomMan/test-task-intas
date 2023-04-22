@@ -1,7 +1,5 @@
 # Проект "INTAS Test"
 
-**[Сайт в интернете: https://demindesign.ru/intas-test/](https://demindesign.ru/intas-test/)**
-
 Проект создан в рамках тестирования на вакансию ***Frontend-разработчик (Junior)*** в **[ООО «ИНТАС-Компани»](http://intas-company.com/)**
 
 
